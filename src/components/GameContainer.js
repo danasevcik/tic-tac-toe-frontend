@@ -20,13 +20,17 @@ class GameContainer extends React.Component {
     }
   }
 
+  handleEmptyClick = (symbol, index) => {
+
+  }
+
   render() {
     return (
       <div id="board-container">
         {this.state.user ? <h1>Welcome, {this.state.user}</h1> : <h1>Welcome</h1>}
 
         <div id="board">
-        
+
           <div className="spot" id='0'> {!!this.state.game[0] ? this.getComponent(0) : <EmptySpace />} </div>
           <div className="spot" id='1'> {!!this.state.game[1] ? this.getComponent(1) : <EmptySpace />} </div>
           <div className="spot" id='2'> {!!this.state.game[2] ? this.getComponent(2) : <EmptySpace />} </div>

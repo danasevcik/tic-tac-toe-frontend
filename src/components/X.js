@@ -6,7 +6,6 @@ class X extends React.Component {
     console.log('rendered');
     return (
       <div id="x">
-        X
       </div>
     )
   }

@@ -6,7 +6,6 @@ class EmptySpace extends React.Component {
     console.log('rendered');
     return (
       <div id="empty-space">
-        EmptySpace
       </div>
     )
   }

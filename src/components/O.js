@@ -6,7 +6,6 @@ class O extends React.Component {
     console.log('rendered');
     return (
       <div id="o">
-        O
       </div>
     )
   }
