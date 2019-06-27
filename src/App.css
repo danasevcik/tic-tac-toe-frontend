@@ -64,3 +64,19 @@ html, body {
 .spot {
   border: 2px black solid;
 }
+
+#x {
+  z-index: 3;
+  position: absolute;
+  height: 25.2%;
+  width: 25.3%;
+  background-color: pink;
+}
+
+#o {
+  z-index: 3;
+  position: absolute;
+  height: 25.2%;
+  width: 25.3%;
+  background-color: green;
+}
