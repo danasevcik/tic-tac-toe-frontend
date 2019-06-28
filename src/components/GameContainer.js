@@ -29,28 +29,104 @@ class GameContainer extends React.Component {
     }
   }
 
-  computerTurn = () => {
-    setTimeout(() => {let newArr = []
-    for (let i = 0; i < this.state.game.length; i++) {
-      console.log(this.state.game[i]);
-      if (this.state.game[i] === null) {
-        newArr.push(i)
+  checkForWinner = () => {
+    if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
+      if (this.state.game[2] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[3] === 'x' && this.state.game[4] === 'x') {
+      if (this.state.game[5] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[6] === 'x' && this.state.game[7] === 'x') {
+      if (this.state.game[8] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[0] === 'x' && this.state.game[3] === 'x') {
+      if (this.state.game[6] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[1] === 'x' && this.state.game[4] === 'x') {
+      if (this.state.game[7] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[2] === 'x' && this.state.game[5] === 'x') {
+      if (this.state.game[8] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[0] === 'x' && this.state.game[4] === 'x') {
+      if (this.state.game[8] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[2] === 'x' && this.state.game[4] === 'x') {
+      if (this.state.game[6] === 'x') {
+        this.props.announceWinner('x')
+      }
+    } else if (this.state.game[0] === 'o' && this.state.game[1] === 'o') {
+      if (this.state.game[2] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[3] === 'o' && this.state.game[4] === 'o') {
+      if (this.state.game[5] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[6] === 'o' && this.state.game[7] === 'o') {
+      if (this.state.game[8] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[0] === 'o' && this.state.game[3] === 'o') {
+      if (this.state.game[6] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
+      if (this.state.game[7] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[2] === 'o' && this.state.game[5] === 'o') {
+      if (this.state.game[8] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[0] === 'o' && this.state.game[4] === 'o') {
+      if (this.state.game[8] === 'o') {
+        this.props.announceWinner('o')
+      }
+    } else if (this.state.game[2] === 'o' && this.state.game[4] === 'o') {
+      if (this.state.game[6] === 'o') {
+        this.props.announceWinner('o')
       }
     }
-    let min = Math.ceil(0);
-    let max = Math.floor(newArr.length - 1);
-    let chosenIndex =  Math.floor(Math.random() * (max - min + 1)) + min
-    let chosenGameIndex = newArr[chosenIndex]
-    this.state.game[chosenGameIndex] = this.state.currentPlayer
-    this.setState({currentPlayer: 'x'})
-    this.setState({game: [...this.state.game]})}, 2000)
+  }
+
+  nextMove = () => {
+    if (!this.checkForWinner()) {
+      if (this.state.currentPlayer === 'o') {
+        this.computerTurn()
+      }
+    }
+  }
+
+  computerTurn = () => {
+    setTimeout(() => {
+      let newArr = []
+      for (let i = 0; i < this.state.game.length; i++) {
+        if (this.state.game[i] === null) {
+          newArr.push(i)
+        }
+      }
+      if (newArr.length > 0) {
+        let min = Math.ceil(0);
+        let max = Math.floor(newArr.length - 1);
+        let chosenIndex =  Math.floor(Math.random() * (max - min + 1)) + min
+        let chosenGameIndex = newArr[chosenIndex]
+        this.state.game[chosenGameIndex] = this.state.currentPlayer
+        this.setState({currentPlayer: 'x'})
+        this.setState({game: [...this.state.game]})}
+      }
+    , 2000)
   }
 
   render() {
-    if (this.state.currentPlayer === 'o') {
-      this.computerTurn()
-    }
-
+    this.nextMove()
     return (
       <div id="board-container">
         {this.state.user ? <h1>Welcome, {this.state.user}</h1> : <h1>Welcome</h1>}

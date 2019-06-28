@@ -88,3 +88,25 @@ html, body {
   width: 25.5%;
   background-color: yellow;
 }
+
+#winner-x {
+  border: 5px black solid;
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 2%;
+  padding-top: 10%;
+  height: 60%;
+  width: 80%;
+  background-color: pink;
+}
+
+#winner-o {
+  border: 5px black solid;
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 2%;
+  padding-top: 10%;
+  height: 60%;
+  width: 80%;
+  background-color: yellow;
+}
