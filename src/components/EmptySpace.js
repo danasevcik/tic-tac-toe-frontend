@@ -2,10 +2,13 @@ import React from 'react';
 
 class EmptySpace extends React.Component {
 
+  handleChooseSpace = (spotId) => {
+    this.props.handleChooseSpace(spotId)
+  }
+
   render() {
-    console.log('rendered');
     return (
-      <div id="empty-space">
+      <div id="empty-space" onClick={() => {this.handleChooseSpace(this.props.spotId)}}>
       </div>
     )
   }

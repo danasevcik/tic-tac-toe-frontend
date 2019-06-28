@@ -7,12 +7,11 @@ class GameContainer extends React.Component {
 
   state = {
     user: null,
-    game: ['x', 'o', null, null, null, null, null, null, null]
+    game: [null, null, null, null, null, null, null, null, null],
+    currentPlayer: 'x'
   }
 
   getComponent = (id) => {
-    console.log(id);
-    console.log(this.state.game[id]);
     if (this.state.game[id] === 'x') {
       return <X />
     } else if (this.state.game[id] === 'o') {
@@ -20,26 +19,53 @@ class GameContainer extends React.Component {
     }
   }
 
-  handleEmptyClick = (symbol, index) => {
+  handleChooseSpace = (spotId) => {
+    this.state.game[spotId] = this.state.currentPlayer
+    this.setState({game: [...this.state.game]})
+    if (this.state.currentPlayer === 'x') {
+      this.setState({currentPlayer: 'o'})
+    } else if (this.state.currentPlayer === 'o') {
+      this.setState({currentPlayer: 'x'})
+    }
+  }
 
+  computerTurn = () => {
+    setTimeout(() => {let newArr = []
+    for (let i = 0; i < this.state.game.length; i++) {
+      console.log(this.state.game[i]);
+      if (this.state.game[i] === null) {
+        newArr.push(i)
+      }
+    }
+    let min = Math.ceil(0);
+    let max = Math.floor(newArr.length - 1);
+    let chosenIndex =  Math.floor(Math.random() * (max - min + 1)) + min
+    let chosenGameIndex = newArr[chosenIndex]
+    this.state.game[chosenGameIndex] = this.state.currentPlayer
+    this.setState({currentPlayer: 'x'})
+    this.setState({game: [...this.state.game]})}, 2000)
   }
 
   render() {
+    if (this.state.currentPlayer === 'o') {
+      this.computerTurn()
+    }
+
     return (
       <div id="board-container">
         {this.state.user ? <h1>Welcome, {this.state.user}</h1> : <h1>Welcome</h1>}
 
         <div id="board">
 
-          <div className="spot" id='0'> {!!this.state.game[0] ? this.getComponent(0) : <EmptySpace />} </div>
-          <div className="spot" id='1'> {!!this.state.game[1] ? this.getComponent(1) : <EmptySpace />} </div>
-          <div className="spot" id='2'> {!!this.state.game[2] ? this.getComponent(2) : <EmptySpace />} </div>
-          <div className="spot" id='3'> {!!this.state.game[3] ? this.getComponent(3) : <EmptySpace />} </div>
-          <div className="spot" id='4'> {!!this.state.game[4] ? this.getComponent(4) : <EmptySpace />} </div>
-          <div className="spot" id='5'> {!!this.state.game[5] ? this.getComponent(5) : <EmptySpace />} </div>
-          <div className="spot" id='6'> {!!this.state.game[6] ? this.getComponent(6) : <EmptySpace />} </div>
-          <div className="spot" id='7'> {!!this.state.game[7] ? this.getComponent(7) : <EmptySpace />} </div>
-          <div className="spot" id='8'> {!!this.state.game[8] ? this.getComponent(8) : <EmptySpace />} </div>
+          <div className="spot" id='0'> {!!this.state.game[0] ? this.getComponent(0) : <EmptySpace spotId={0} handleChooseSpace={() => {this.handleChooseSpace(0)}}/>} </div>
+          <div className="spot" id='1'> {!!this.state.game[1] ? this.getComponent(1) : <EmptySpace spotId={1} handleChooseSpace={() => {this.handleChooseSpace(1)}}/>} </div>
+          <div className="spot" id='2'> {!!this.state.game[2] ? this.getComponent(2) : <EmptySpace spotId={2} handleChooseSpace={() => {this.handleChooseSpace(2)}}/>} </div>
+          <div className="spot" id='3'> {!!this.state.game[3] ? this.getComponent(3) : <EmptySpace spotId={3} handleChooseSpace={() => {this.handleChooseSpace(3)}}/>} </div>
+          <div className="spot" id='4'> {!!this.state.game[4] ? this.getComponent(4) : <EmptySpace spotId={4} handleChooseSpace={() => {this.handleChooseSpace(4)}}/>} </div>
+          <div className="spot" id='5'> {!!this.state.game[5] ? this.getComponent(5) : <EmptySpace spotId={5} handleChooseSpace={() => {this.handleChooseSpace(5)}}/>} </div>
+          <div className="spot" id='6'> {!!this.state.game[6] ? this.getComponent(6) : <EmptySpace spotId={6} handleChooseSpace={() => {this.handleChooseSpace(6)}}/>} </div>
+          <div className="spot" id='7'> {!!this.state.game[7] ? this.getComponent(7) : <EmptySpace spotId={7} handleChooseSpace={() => {this.handleChooseSpace(7)}}/>} </div>
+          <div className="spot" id='8'> {!!this.state.game[8] ? this.getComponent(8) : <EmptySpace spotId={8} handleChooseSpace={() => {this.handleChooseSpace(8)}}/>} </div>
 
         </div>
 
