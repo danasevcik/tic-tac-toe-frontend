@@ -113,7 +113,6 @@ class GameContainer extends React.Component {
   }
 
   nextMove = () => {
-    // this.checkForWinner()
     if (!this.checkForWinner()) {
       if (this.state.currentPlayer === 'o') {
         this.computerTurn()
@@ -142,7 +141,6 @@ class GameContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state.game);
     this.nextMove()
     return (
       <div id="board-container">

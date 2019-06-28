@@ -3,6 +3,7 @@ import './App.css';
 import GameContainer from './components/GameContainer'
 import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
+import GameOver from './components/GameOver'
 
 class App extends React.Component {
 
@@ -17,8 +18,6 @@ class App extends React.Component {
   }
 
   announceWinner = (letter) => {
-    console.log('in announce winner');
-    console.log(letter);
     setTimeout(() => {
       this.setState({start: false})
       this.setState({winner: [true, letter]})
