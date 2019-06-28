@@ -17,7 +17,7 @@ class X extends React.Component {
 
   render() {
     return (
-      <div id="x" onClick={() => {this.alreadyTaken()}}>
+      <div id={this.props.hard ? "hard-x" : "x"} onClick={() => {this.alreadyTaken()}}>
         {this.state.taken ? <AlreadyTaken /> : null}
       </div>
     )

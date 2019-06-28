@@ -61,6 +61,18 @@ html, body {
   grid-gap: 10px;
 }
 
+#hard-board {
+  border: 5px black solid;
+  padding: 10px;
+  display: grid;
+  margin-left: 10%;
+  height: 80%;
+  width: 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
 .spot {
   border: 2px black solid;
 }
@@ -73,6 +85,14 @@ html, body {
   background-color: lightgrey;
 }
 
+#hard-empty-space {
+  z-index: 3;
+  position: absolute;
+  height: 18.5%;
+  width: 18.5%;
+  background-color: lightgrey;
+}
+
 #x {
   z-index: 3;
   position: absolute;
@@ -81,11 +101,27 @@ html, body {
   background-color: pink;
 }
 
+#hard-x {
+  z-index: 3;
+  position: absolute;
+  height: 18.5%;
+  width: 18.5%;
+  background-color: pink;
+}
+
 #o {
   z-index: 3;
   position: absolute;
   height: 25.2%;
   width: 25.5%;
+  background-color: yellow;
+}
+
+#hard-o {
+  z-index: 3;
+  position: absolute;
+  height: 18.5%;
+  width: 18.5%;
   background-color: yellow;
 }
 

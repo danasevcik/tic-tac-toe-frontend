@@ -8,7 +8,7 @@ class EmptySpace extends React.Component {
 
   render() {
     return (
-      <div id="empty-space" onClick={() => {this.handleChooseSpace(this.props.spotId)}}>
+      <div id={this.props.hard ? "hard-empty-space" : "empty-space"} onClick={() => {this.handleChooseSpace(this.props.spotId)}}>
       </div>
     )
   }
