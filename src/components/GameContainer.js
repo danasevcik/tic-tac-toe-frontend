@@ -64,34 +64,42 @@ class GameContainer extends React.Component {
       }
     } else if (this.state.game[0] === 'o' && this.state.game[1] === 'o') {
       if (this.state.game[2] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[3] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[5] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[6] === 'o' && this.state.game[7] === 'o') {
       if (this.state.game[8] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[0] === 'o' && this.state.game[3] === 'o') {
       if (this.state.game[6] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[7] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[2] === 'o' && this.state.game[5] === 'o') {
       if (this.state.game[8] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[0] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[8] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     } else if (this.state.game[2] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[6] === 'o') {
+        console.log('here');
         this.props.announceWinner('o')
       }
     }
@@ -126,6 +134,7 @@ class GameContainer extends React.Component {
   }
 
   render() {
+    console.log(this.state.game);
     this.nextMove()
     return (
       <div id="board-container">

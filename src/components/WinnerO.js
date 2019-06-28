@@ -5,7 +5,7 @@ class WinnerO extends React.Component {
   render() {
     return (
       <div id='winner-o'>
-        <img src="https://www.clipartmax.com/png/middle/195-1952390_sad-face-emoji-icons-sad-emoji-black-and-white.png" alt="smiley face" />
+        <img class="end-img" src="https://hotemoji.com/images/dl/k/slightly-frowning-face-emoji-by-twitter.png" alt="smiley face" />
         <h1>Better luck next time, buddy!</h1>
       </div>
     )

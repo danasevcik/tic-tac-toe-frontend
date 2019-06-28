@@ -17,6 +17,8 @@ class App extends React.Component {
   }
 
   announceWinner = (letter) => {
+    console.log('in announce winner');
+    console.log(letter);
     setTimeout(() => {
       this.setState({start: false})
       this.setState({winner: [true, letter]})
@@ -27,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {(this.state.start && !this.state.winner[0]) ?
-          <GameContainer announceWinner={(player) => this.announceWinner(player)}/>
+          <GameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
           :
           <div>
             <h1>Welcome</h1>
