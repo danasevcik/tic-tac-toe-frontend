@@ -34,78 +34,86 @@ class GameContainer extends React.Component {
       if (this.state.game[2] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[3] === 'x' && this.state.game[4] === 'x') {
+    }
+    if (this.state.game[3] === 'x' && this.state.game[4] === 'x') {
       if (this.state.game[5] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[6] === 'x' && this.state.game[7] === 'x') {
+    }
+    if (this.state.game[6] === 'x' && this.state.game[7] === 'x') {
       if (this.state.game[8] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[0] === 'x' && this.state.game[3] === 'x') {
+    }
+    if (this.state.game[0] === 'x' && this.state.game[3] === 'x') {
       if (this.state.game[6] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[1] === 'x' && this.state.game[4] === 'x') {
+    }
+    if (this.state.game[1] === 'x' && this.state.game[4] === 'x') {
       if (this.state.game[7] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[2] === 'x' && this.state.game[5] === 'x') {
+    }
+    if (this.state.game[2] === 'x' && this.state.game[5] === 'x') {
       if (this.state.game[8] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[0] === 'x' && this.state.game[4] === 'x') {
+    }
+    if (this.state.game[0] === 'x' && this.state.game[4] === 'x') {
       if (this.state.game[8] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[2] === 'x' && this.state.game[4] === 'x') {
+    }
+    if (this.state.game[2] === 'x' && this.state.game[4] === 'x') {
       if (this.state.game[6] === 'x') {
         this.props.announceWinner('x')
       }
-    } else if (this.state.game[0] === 'o' && this.state.game[1] === 'o') {
+    }
+    if (this.state.game[0] === 'o' && this.state.game[1] === 'o') {
       if (this.state.game[2] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[3] === 'o' && this.state.game[4] === 'o') {
+    }
+    if (this.state.game[3] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[5] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[6] === 'o' && this.state.game[7] === 'o') {
+    }
+    if (this.state.game[6] === 'o' && this.state.game[7] === 'o') {
       if (this.state.game[8] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[0] === 'o' && this.state.game[3] === 'o') {
+    }
+    if (this.state.game[0] === 'o' && this.state.game[3] === 'o') {
       if (this.state.game[6] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
+    }
+    if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[7] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[2] === 'o' && this.state.game[5] === 'o') {
+    }
+    if (this.state.game[2] === 'o' && this.state.game[5] === 'o') {
       if (this.state.game[8] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[0] === 'o' && this.state.game[4] === 'o') {
+    }
+    if (this.state.game[0] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[8] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
-    } else if (this.state.game[2] === 'o' && this.state.game[4] === 'o') {
+    }
+    if (this.state.game[2] === 'o' && this.state.game[4] === 'o') {
       if (this.state.game[6] === 'o') {
-        console.log('here');
         this.props.announceWinner('o')
       }
     }
   }
 
   nextMove = () => {
+    // this.checkForWinner()
     if (!this.checkForWinner()) {
       if (this.state.currentPlayer === 'o') {
         this.computerTurn()
