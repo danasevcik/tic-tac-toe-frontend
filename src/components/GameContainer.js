@@ -6,7 +6,6 @@ import O from './O'
 class GameContainer extends React.Component {
 
   state = {
-    user: null,
     game: [null, null, null, null, null, null, null, null, null],
     currentPlayer: 'x'
   }
@@ -144,7 +143,7 @@ class GameContainer extends React.Component {
     this.nextMove()
     return (
       <div id="board-container">
-        {this.state.user ? <h1>Welcome, {this.state.user}</h1> : <h1>Welcome</h1>}
+        {this.props.user ? <h1>Welcome, {this.state.props}</h1> : <h1>Welcome</h1>}
 
         <div id="board">
 

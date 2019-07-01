@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Login from './components/Login'
 import GameContainer from './components/GameContainer'
 import HardGameContainer from './components/HardGameContainer'
 
@@ -10,6 +11,8 @@ import GameOver from './components/GameOver'
 class App extends React.Component {
 
   state = {
+    user: null,
+    start: false,
     startEasy: false,
     startHard: false,
     winner: [null, null]
@@ -18,11 +21,13 @@ class App extends React.Component {
   startEasyGame = () => {
     this.setState({winner: [null, null]})
     this.setState({startEasy: true})
+    this.setState({start: true})
   }
 
   startHardGame = () => {
     this.setState({winner: [null, null]})
     this.setState({startHard: true})
+    this.setState({start: true})
   }
 
   announceWinner = (letter) => {
@@ -36,10 +41,14 @@ class App extends React.Component {
     return (
       <div className="App">
         {<h1>TIC TAC TOE LAND 💫</h1>}
-        {(!this.state.startEasy && !this.state.startHard) &&
+        {(!this.state.start && this.state.user) ?
           <div>
             <button onClick={() => {this.startEasyGame()}}>Start Easy Game</button>
             <button onClick={() => {this.startHardGame()}}>Start Hard Game</button>
+          </div>
+          :
+          <div>
+            <Login />
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
