@@ -3,7 +3,9 @@ import React from 'react';
 class Login extends React.Component {
 
   state = {
-    name: null
+    name: null,
+    hometown: null,
+    funFact: null
   }
 
   handleChange = (e) => {
@@ -19,7 +21,9 @@ class Login extends React.Component {
       },
       body: JSON.stringify({
         user: {
-          name: state.name
+          name: state.name,
+          hometown: state.hometown,
+          fun_fact: state.funFact
         }
       })
     })
@@ -29,7 +33,9 @@ class Login extends React.Component {
     console.log('rendered');
     return (
       <div>
-        <input onChange={(e) => {this.handleChange(e)}} id="name" name="name" placeholder="name"></input>
+        <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="name"></input>
+        <input onChange={(e) => {this.handleChange(e)}} name="hometown" placeholder="hometown"></input>
+        <input onChange={(e) => {this.handleChange(e)}} name="funFact" placeholder="fun fact"></input>
         <br></br>
         <button onClick={() => {this.handleLogin(this.state)}}>Let's Get Started</button>
       </div>
