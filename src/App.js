@@ -35,14 +35,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {(this.state.startEasy && !this.state.winner[0]) ?
-          <GameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
-          :
+        {<h1>TIC TAC TOE LAND 💫</h1>}
+        {(!this.state.startEasy && !this.state.startHard) &&
           <div>
-            <h1>Welcome</h1>
             <button onClick={() => {this.startEasyGame()}}>Start Easy Game</button>
             <button onClick={() => {this.startHardGame()}}>Start Hard Game</button>
           </div>
+        }
+        {(this.state.startEasy && !this.state.winner[0]) &&
+          <GameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
         }
         {(this.state.startHard && !this.state.winner[0]) &&
           <HardGameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
