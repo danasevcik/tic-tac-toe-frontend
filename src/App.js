@@ -60,9 +60,50 @@ class App extends React.Component {
     .then(data => console.log())
   }
 
-  announceWinner = (letter) => {
+  announceWinnerEasy = (letter) => {
+    if (letter === 'x') {
+      fetch(`http://localhost:3000/easy-user`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json"
+        },
+        body: JSON.stringify({
+          user: {
+            user_id: this.state.user.id,
+            score: 5
+          }
+        })
+      })
+      .then(res => res.json())
+      .then(data => console.log())
+    }
     setTimeout(() => {
       this.setState({startEasy: false})
+      this.setState({winner: [true, letter]})
+    }, 1000)
+  }
+
+  announceWinnerHard = (letter) => {
+    if (letter === 'x') {
+      fetch(`http://localhost:3000/users/${this.state.user.id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json"
+        },
+        body: JSON.stringify({
+          user: {
+            user_id: this.state.user.id,
+            score: 10
+          }
+        })
+      })
+      .then(res => res.json())
+      .then(data => console.log())
+    }
+    setTimeout(() => {
+      this.setState({startHard: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -86,10 +127,10 @@ class App extends React.Component {
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
-          <GameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
+          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)}/>
         }
         {(this.state.startHard && !this.state.winner[0]) &&
-          <HardGameContainer announceWinner={(letter) => this.announceWinner(letter)}/>
+          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)}/>
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
           <WinnerX />
