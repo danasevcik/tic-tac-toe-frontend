@@ -29,6 +29,8 @@ class Login extends React.Component {
         }
       })
     })
+    .then(res => res.json())
+    .then(data => this.props.setUser(data.user))
   }
 
   handleLogin = (state) => {
@@ -44,6 +46,8 @@ class Login extends React.Component {
         }
       })
     })
+    .then(res => res.json())
+    .then(data => this.props.setUser(data.user))
   }
 
   handleNew = () => {

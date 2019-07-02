@@ -37,6 +37,10 @@ class App extends React.Component {
     }, 1000)
   }
 
+  setUser = (user) => {
+    this.setState({ user })
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +52,7 @@ class App extends React.Component {
           </div>
           :
           <div>
-            <Login />
+            <Login setUser={(user) => this.setUser(user)}/>
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
