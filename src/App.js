@@ -80,6 +80,7 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startEasy: false})
+      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -104,6 +105,7 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startHard: false})
+      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
