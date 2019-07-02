@@ -67,10 +67,10 @@ class Login extends React.Component {
     console.log('rendered');
     return (
       <div>
-        {(this.state.new || this.state.old) ? null :
+        {(this.state.new || this.state.old) && (!this.props.user) ? null :
           <button onClick={() => {this.handleNew()}}>New User</button>
         }
-        {(this.state.new || this.state.old) ? null :
+        {(this.state.new || this.state.old) && (!this.props.user) ? null :
           <button onClick={() => {this.handleOld()}}>Returning User</button>
         }
       {this.state.new &&

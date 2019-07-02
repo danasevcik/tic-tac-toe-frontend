@@ -22,7 +22,7 @@ class App extends React.Component {
     this.setState({winner: [null, null]})
     this.setState({startEasy: true})
     this.setState({start: true})
-    fetch(`http://localhost:3000/easy-session`, {
+    fetch('http://localhost:3000/easy-session', {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,6 +43,21 @@ class App extends React.Component {
     this.setState({winner: [null, null]})
     this.setState({startHard: true})
     this.setState({start: true})
+    fetch('http://localhost:3000/hard-session', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        accepts: "application/json"
+      },
+      body: JSON.stringify({
+        session: {
+          user_id: this.state.user.id,
+          score: 10
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log())
   }
 
   announceWinner = (letter) => {
@@ -67,7 +82,7 @@ class App extends React.Component {
           </div>
           :
           <div>
-            <Login setUser={(user) => this.setUser(user)}/>
+            <Login setUser={(user) => this.setUser(user)} user={this.state.user}/>
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
