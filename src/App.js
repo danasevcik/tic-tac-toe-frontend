@@ -22,6 +22,21 @@ class App extends React.Component {
     this.setState({winner: [null, null]})
     this.setState({startEasy: true})
     this.setState({start: true})
+    fetch(`http://localhost:3000/easy-session`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        accepts: "application/json"
+      },
+      body: JSON.stringify({
+        session: {
+          user_id: this.state.user.id,
+          score: 5
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log())
   }
 
   startHardGame = () => {
