@@ -20,15 +20,15 @@ class ScoreBoard extends React.Component {
   }
 
   renderUsers = (users) => {
-    return users.map(user => {
-      return <HighScore user={user} key={user.id}/>
+    return users.map((user, i) => {
+      return <HighScore user={user} key={user.id} number={i}/>
     })
   }
 
   render() {
     return (
       <div>
-      scoreboard
+        HIGH SCORES
         {!this.state.users && this.getHighScores()}
         {!!this.state.users && this.renderUsers(this.state.users)}
       </div>
