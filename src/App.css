@@ -170,3 +170,8 @@ html, body {
   width: 80%;
   background-color: lightgrey;
 }
+
+#show {
+  z-index: 5;
+  position: absolute;
+}

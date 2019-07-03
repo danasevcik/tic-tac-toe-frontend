@@ -69,8 +69,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log('rendered');
-    console.log(this.state);
     return (
       <div>
         {!this.state.loggedIn &&
