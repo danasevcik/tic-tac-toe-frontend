@@ -82,6 +82,7 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startEasy: false})
+      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -106,6 +107,7 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startHard: false})
+      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -121,12 +123,14 @@ class App extends React.Component {
         {this.state.user &&
           <ScoreBoard />
         }
-        {(!this.state.start && this.state.user) ?
+        {(this.state.user) &&
           <div>
             <button onClick={() => {this.startEasyGame()}}>Start Easy Game</button>
             <button onClick={() => {this.startHardGame()}}>Start Hard Game</button>
           </div>
-          :
+        }
+
+        {(!this.state.user) &&
           <div>
             <Login setUser={(user) => this.setUser(user)} user={this.state.user}/>
           </div>
