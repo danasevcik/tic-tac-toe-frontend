@@ -12,7 +12,7 @@ class ScoreBoard extends React.Component {
     .then(res => res.json())
     .then(data => {
       let sortedUsers = data.users.sort((userA, userB) => {
-        return userA.high_score - userB.high_score
+        return userB.high_score - userA.high_score
       })
       let highScoreUsers = sortedUsers.slice(0,5)
       this.setState({users: highScoreUsers})
