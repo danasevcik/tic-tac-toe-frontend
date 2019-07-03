@@ -7,7 +7,8 @@ class Login extends React.Component {
     hometown: null,
     funFact: null,
     new: false,
-    old: false
+    old: false,
+    loggedIn: false
   }
 
   handleChange = (e) => {
@@ -31,6 +32,7 @@ class Login extends React.Component {
     })
     .then(res => res.json())
     .then(data => this.props.setUser(data.user))
+    .then(this.setState({loggedIn: true}))
   }
 
   handleLogin = (state) => {
@@ -48,13 +50,16 @@ class Login extends React.Component {
     })
     .then(res => res.json())
     .then(data => this.props.setUser(data.user))
+    .then(this.setState({loggedIn: true}))
   }
 
   handleNew = () => {
+    this.setState({loggedIn: true})
     this.setState({new: true})
   }
 
   handleOld = () => {
+    this.setState({loggedIn: true})
     this.setState({old: true})
   }
 
@@ -65,12 +70,13 @@ class Login extends React.Component {
 
   render() {
     console.log('rendered');
+    console.log(this.state);
     return (
       <div>
-        {(this.state.new || this.state.old) ? null :
+        {!this.state.loggedIn &&
           <button onClick={() => {this.handleNew()}}>New User</button>
         }
-        {(this.state.new || this.state.old) ? null :
+        {!this.state.loggedIn &&
           <button onClick={() => {this.handleOld()}}>Returning User</button>
         }
       {this.state.new &&

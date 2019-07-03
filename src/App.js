@@ -3,6 +3,8 @@ import './App.css';
 import Login from './components/Login'
 import GameContainer from './components/GameContainer'
 import HardGameContainer from './components/HardGameContainer'
+import ScoreBoard from './components/ScoreBoard'
+
 
 import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
@@ -80,7 +82,6 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startEasy: false})
-      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -105,7 +106,6 @@ class App extends React.Component {
     }
     setTimeout(() => {
       this.setState({startHard: false})
-      this.setState({start: false})
       this.setState({winner: [true, letter]})
     }, 1000)
   }
@@ -118,6 +118,9 @@ class App extends React.Component {
     return (
       <div className="App">
         {<h1>TIC TAC TOE LAND 💫</h1>}
+        {this.state.user &&
+          <ScoreBoard />
+        }
         {(!this.state.start && this.state.user) ?
           <div>
             <button onClick={() => {this.startEasyGame()}}>Start Easy Game</button>
