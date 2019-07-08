@@ -5,7 +5,7 @@ class HighScore extends React.Component {
   render() {
     return (
       <span>
-        <p>{this.props.number + 1}. {this.props.user.name} - {this.props.user.high_score}</p>
+        <p>{this.props.number + 1}. {this.props.user.name.toUpperCase()} - {this.props.user.high_score}</p>
       </span>
     )
   }

@@ -125,8 +125,8 @@ class App extends React.Component {
         }
         {(this.state.user) &&
           <div>
-            <button onClick={() => {this.startEasyGame()}}>Start Easy Game</button>
-            <button onClick={() => {this.startHardGame()}}>Start Hard Game</button>
+            <button onClick={() => {this.startEasyGame()}}>START EASY GAME</button>
+            <button onClick={() => {this.startHardGame()}}>START HARD GAME</button>
           </div>
         }
 
