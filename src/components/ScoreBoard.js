@@ -30,7 +30,9 @@ class ScoreBoard extends React.Component {
       <div>
         HIGH SCORES
         {!this.state.users && this.getHighScores()}
-        {!!this.state.users && this.renderUsers(this.state.users)}
+        <div id="high-scores">
+          {!!this.state.users && this.renderUsers(this.state.users)}
+        </div>
       </div>
     )
   }

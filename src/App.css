@@ -175,3 +175,8 @@ html, body {
   z-index: 5;
   position: absolute;
 }
+
+#high-scores {
+  border: 5px black solid;
+  margin: 0px 100px;
+}
