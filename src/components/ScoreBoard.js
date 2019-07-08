@@ -20,22 +20,19 @@ class ScoreBoard extends React.Component {
   }
 
   renderUsers = (users) => {
+    this.state.users = null
     return users.map((user, i) => {
       return <HighScore user={user} key={user.id} number={i}/>
     })
   }
 
-  clearStateUsers = () => {
-    console.log('in clear state users');
-    
-  }
-
   render() {
+    console.log('winner', !!this.props.winner[0]);
+    console.log('users', !this.state.users);
     return (
       <div>
         <div id="high-scores">
           <div id="high-scores-title">HIGH SCORES</div>
-          {!this.props.start && this.clearStateUsers()}
           {!this.state.users && this.getHighScores()}
           {!!this.state.users && this.renderUsers(this.state.users)}
         </div>
