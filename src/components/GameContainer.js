@@ -140,10 +140,11 @@ class GameContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     this.nextMove()
     return (
       <div id="board-container">
-        {this.props.user ? <h1>Welcome, {this.state.props}</h1> : <h1>Welcome</h1>}
+        {!!this.props.user ? <h1>Welcome, }</h1> : <h1>Welcome</h1>}
 
         <div id="board">
 

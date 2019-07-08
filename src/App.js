@@ -136,10 +136,10 @@ class App extends React.Component {
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
-          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)}/>
+          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} user={this.state.user}/>
         }
         {(this.state.startHard && !this.state.winner[0]) &&
-          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)}/>
+          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)} user={this.state.user}/>
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
           <WinnerX />
