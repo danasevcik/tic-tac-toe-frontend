@@ -89,8 +89,8 @@ class App extends React.Component {
 
   announceWinnerHard = (letter) => {
     if (letter === 'x') {
-      fetch(`http://localhost:3000/users/${this.state.user.id}`, {
-        method: "PATCH",
+      fetch(`http://localhost:3000/hard-user`, {
+        method: "POST",
         headers: {
           "content-type": "application/json",
           accepts: "application/json"

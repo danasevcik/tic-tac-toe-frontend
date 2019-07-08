@@ -27,8 +27,6 @@ class ScoreBoard extends React.Component {
   }
 
   render() {
-    console.log('winner', !!this.props.winner[0]);
-    console.log('users', !this.state.users);
     return (
       <div>
         <div id="high-scores">
