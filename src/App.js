@@ -121,7 +121,7 @@ class App extends React.Component {
       <div className="App">
         {<h1>TIC TAC TOE LAND 💫</h1>}
         {this.state.user &&
-          <ScoreBoard />
+          <ScoreBoard start={this.state.start}/>
         }
         {(this.state.user) &&
           <div>

@@ -25,11 +25,17 @@ class ScoreBoard extends React.Component {
     })
   }
 
+  clearStateUsers = () => {
+    console.log('in clear state users');
+    
+  }
+
   render() {
     return (
       <div>
         <div id="high-scores">
           <div id="high-scores-title">HIGH SCORES</div>
+          {!this.props.start && this.clearStateUsers()}
           {!this.state.users && this.getHighScores()}
           {!!this.state.users && this.renderUsers(this.state.users)}
         </div>
