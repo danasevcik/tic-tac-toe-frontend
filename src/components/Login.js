@@ -73,25 +73,25 @@ class Login extends React.Component {
     return (
       <div>
         {!this.state.loggedIn &&
-          <button onClick={() => {this.handleNew()}}>New User</button>
+          <button onClick={() => {this.handleNew()}}>SIGN UP</button>
         }
         {!this.state.loggedIn &&
-          <button onClick={() => {this.handleOld()}}>Returning User</button>
+          <button onClick={() => {this.handleOld()}}>LOGIN</button>
         }
       {this.state.new &&
         <div>
-          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="name"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="hometown" placeholder="hometown"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="funFact" placeholder="fun fact"></input>
-          <button onClick={() => {this.handleCreate(this.state)}}>Let's Get Started</button>
-          <button onClick={() => {this.goBack()}}>Back</button>
+          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
+          <input onChange={(e) => {this.handleChange(e)}} name="hometown" placeholder="HOMETOWN"></input>
+          <input onChange={(e) => {this.handleChange(e)}} name="funFact" placeholder="FUN FACT"></input>
+          <button onClick={() => {this.handleCreate(this.state)}}>SUBMIT</button>
+          <button onClick={() => {this.goBack()}}>BACK</button>
         </div>
       }
       {this.state.old &&
         <div>
-          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="name"></input>
-          <button onClick={() => {this.handleLogin(this.state)}}>Let's Get Started</button>
-          <button onClick={() => {this.goBack()}}>Back</button>
+          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
+          <button onClick={() => {this.handleLogin(this.state)}}>SUBMIT</button>
+          <button onClick={() => {this.goBack()}}>BACK</button>
         </div>
       }
     </div>
