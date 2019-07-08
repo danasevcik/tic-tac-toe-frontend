@@ -144,7 +144,7 @@ class GameContainer extends React.Component {
     this.nextMove()
     return (
       <div id="board-container">
-        {!!this.props.user ? <h1>Welcome, }</h1> : <h1>Welcome</h1>}
+        {!!this.props.user ? <h1>Welcome, {this.props.user.name}</h1> : <h1>Welcome</h1>}
 
         <div id="board">
 
