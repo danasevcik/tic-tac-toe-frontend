@@ -66,6 +66,7 @@ class Login extends React.Component {
   goBack = () => {
     this.setState({new: false})
     this.setState({old: false})
+    this.setState({loggedIn: false})
   }
 
   render() {
