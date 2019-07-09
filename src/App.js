@@ -22,6 +22,7 @@ class App extends React.Component {
 
   startEasyGame = () => {
     this.setState({winner: [null, null]})
+    this.setState({startHard: false})
     this.setState({startEasy: true})
     this.setState({start: true})
     fetch('http://localhost:3000/easy-session', {
@@ -43,6 +44,7 @@ class App extends React.Component {
 
   startHardGame = () => {
     this.setState({winner: [null, null]})
+    this.setState({startEasy: false})
     this.setState({startHard: true})
     this.setState({start: true})
     fetch('http://localhost:3000/hard-session', {
