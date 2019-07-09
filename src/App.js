@@ -174,7 +174,7 @@ class App extends React.Component {
         {(this.state.startHard && !this.state.winner[0]) &&
           <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)}/>
         }
-        {(this.state.startCompEasy && !this.state.winner[0]) &&
+        {(this.state.startEasyCompGame && !this.state.winner[0]) &&
           <EasyCompGameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} />
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
