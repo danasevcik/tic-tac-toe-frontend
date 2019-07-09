@@ -18,6 +18,7 @@ class App extends React.Component {
     start: false,
     startEasy: false,
     startHard: false,
+    startEasyCompGame: false,
     winner: [null, null]
   }
 
@@ -27,6 +28,7 @@ class App extends React.Component {
     }
     this.setState({winner: [null, null]})
     this.setState({startHard: false})
+    this.setState({startEasyCompGame: false})
     this.setState({startEasy: true})
     this.setState({start: true})
     fetch('http://localhost:3000/easy-session', {
@@ -48,10 +50,13 @@ class App extends React.Component {
     if (this.state.startHard) {
       alert('Game In Session!')
     }
+
     this.setState({winner: [null, null]})
     this.setState({startEasy: false})
+    this.setState({startEasyCompGame: false})
     this.setState({startHard: true})
     this.setState({start: true})
+
     fetch('http://localhost:3000/hard-session', {
       method: "POST",
       headers: {
@@ -62,6 +67,32 @@ class App extends React.Component {
         session: {
           user_id: this.state.user.id,
           score: 10
+        }
+      })
+    })
+  }
+
+  startEasyCompGame = () => {
+    if (this.state.startEasyCompGame) {
+      alert('Game In Session!')
+    }
+
+    this.setState({winner: [null, null]})
+    this.setState({startEasy: false})
+    this.setState({startHard: false})
+    this.setState({startEasyCompGame: true})
+    this.setState({start: true})
+
+    fetch('http://localhost:3000/easy-comp-session', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        accepts: "application/json"
+      },
+      body: JSON.stringify({
+        session: {
+          user_id: this.state.user.id,
+          score: 20
         }
       })
     })
