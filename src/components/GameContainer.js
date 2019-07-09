@@ -140,7 +140,6 @@ class GameContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     this.nextMove()
     return (
       <div id="board-container">

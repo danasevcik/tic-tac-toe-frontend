@@ -9,6 +9,7 @@ import ScoreBoard from './components/ScoreBoard'
 import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
 import GameOver from './components/GameOver'
+import Warn from './components/Warn'
 
 class App extends React.Component {
 
@@ -21,6 +22,9 @@ class App extends React.Component {
   }
 
   startEasyGame = () => {
+    if (this.state.startEasy) {
+      return <Warn />
+    }
     this.setState({winner: [null, null]})
     this.setState({startHard: false})
     this.setState({startEasy: true})
@@ -38,8 +42,6 @@ class App extends React.Component {
         }
       })
     })
-    .then(res => res.json())
-    .then(data => console.log())
   }
 
   startHardGame = () => {
@@ -60,8 +62,6 @@ class App extends React.Component {
         }
       })
     })
-    .then(res => res.json())
-    .then(data => console.log())
   }
 
   announceWinnerEasy = (letter) => {
@@ -79,8 +79,6 @@ class App extends React.Component {
           }
         })
       })
-      .then(res => res.json())
-      .then(data => console.log())
     }
     setTimeout(() => {
       this.setState({startEasy: false})
@@ -104,8 +102,6 @@ class App extends React.Component {
           }
         })
       })
-      .then(res => res.json())
-      .then(data => console.log())
     }
     setTimeout(() => {
       this.setState({startHard: false})
@@ -138,10 +134,10 @@ class App extends React.Component {
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
-          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} user={this.state.user}/>
+          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} user={this.state.user} startEasy={this.state.startEasy}/>
         }
         {(this.state.startHard && !this.state.winner[0]) &&
-          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)} user={this.state.user}/>
+          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)} user={this.state.user} startHard={this.state.startHard}/>
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
           <WinnerX />
