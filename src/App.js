@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login'
 import GameContainer from './components/GameContainer'
 import HardGameContainer from './components/HardGameContainer'
+import EasyCompGameContainer from './components/EasyCompGameContainer'
 import ScoreBoard from './components/ScoreBoard'
 
 
@@ -127,6 +128,7 @@ class App extends React.Component {
           <div>
             <button onClick={() => {this.startEasyGame()}}>START EASY GAME</button>
             <button onClick={() => {this.startHardGame()}}>START HARD GAME</button>
+            <button onClick={() => {this.startEasyCompGame()}}>START HARDER GAME</button>
           </div>
         }
 
@@ -136,10 +138,13 @@ class App extends React.Component {
           </div>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
-          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} user={this.state.user} startEasy={this.state.startEasy}/>
+          <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)}/>
         }
         {(this.state.startHard && !this.state.winner[0]) &&
-          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)} user={this.state.user} startHard={this.state.startHard}/>
+          <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)}/>
+        }
+        {(this.state.startCompEasy && !this.state.winner[0]) &&
+          <EasyCompGameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} />
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
           <WinnerX />
