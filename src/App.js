@@ -9,7 +9,6 @@ import ScoreBoard from './components/ScoreBoard'
 import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
 import GameOver from './components/GameOver'
-import Warn from './components/Warn'
 
 class App extends React.Component {
 
@@ -23,7 +22,7 @@ class App extends React.Component {
 
   startEasyGame = () => {
     if (this.state.startEasy) {
-      return <Warn />
+      alert('Game In Session!')
     }
     this.setState({winner: [null, null]})
     this.setState({startHard: false})
@@ -45,6 +44,9 @@ class App extends React.Component {
   }
 
   startHardGame = () => {
+    if (this.state.startHard) {
+      alert('Game In Session!')
+    }
     this.setState({winner: [null, null]})
     this.setState({startEasy: false})
     this.setState({startHard: true})
