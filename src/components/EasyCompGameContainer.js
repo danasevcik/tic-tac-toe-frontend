@@ -120,32 +120,30 @@ class EasyCompGameContainer extends React.Component {
   }
 
   computerTurn = () => {
-    console.log('computer turn');
+    console.log('computer turn', this.state.currentPlayer);
     setTimeout(() => {
       if (this.state.game[4] === null) {
         this.state.game[4] = this.state.currentPlayer
         this.setState({currentPlayer: 'x'})
         this.setState({game: [...this.state.game]})
       }
+      if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
+        if (this.state.game[2] === null) {
+          this.state.game[2] = this.state.currentPlayer
+          this.setState({currentPlayer: 'x'})
+          this.setState({game: [...this.state.game]})
+        }
+      }
+      if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
+        if (this.state.game[4] === 'o' && this.state.game[2] === 'o') {
+          if (this.state.currentPlayer === 'o') {
+            this.state.game[6] = this.state.currentPlayer
+            this.setState({currentPlayer: 'x'})
+            this.setState({game: [...this.state.game]})
+          }
+        }
+      }
 
-
-
-      // let newArr = []
-      // for (let i = 0; i < this.state.game.length; i++) {
-      //   if (this.state.game[i] === null) {
-      //     newArr.push(i)
-      //   }
-      // }
-      // if (newArr.length > 0) {
-
-        // let min = Math.ceil(0);
-        // let max = Math.floor(newArr.length - 1);
-        // let chosenIndex =  Math.floor(Math.random() * (max - min + 1)) + min
-        // let chosenGameIndex = newArr[chosenIndex]
-        // this.state.game[chosenGameIndex] = this.state.currentPlayer
-        // this.setState({currentPlayer: 'x'})
-        // this.setState({game: [...this.state.game]})
-      
     }
     , 2000)
   }
