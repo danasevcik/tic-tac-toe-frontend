@@ -175,6 +175,15 @@ class EasyCompGameContainer extends React.Component {
           this.setState({game: [...this.state.game]})
         }
       }
+      if (this.state.game[0] === 'x' && this.state.game[2] === 'x') {
+        if (this.state.game[1] === 'o' && this.state.currentPlayer === 'o') {
+          if (this.state.game[7] === null && this.state.currentPlayer === 'o') {
+            this.state.game[7] = this.state.currentPlayer
+            this.setState({currentPlayer: 'x'})
+            this.setState({game: [...this.state.game]})
+          }
+        }
+      }
 
     }
     , 2000)
