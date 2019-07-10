@@ -109,6 +109,18 @@ class EasyCompGameContainer extends React.Component {
         this.props.announceWinner('o')
       }
     }
+
+    let newArr = []
+    for(let i = 0; i < this.state.game.length; i++) {
+      if (this.state.game[i] === null) {
+        newArr.push(this.state.game[i])
+      }
+    }
+    if (newArr.length === 0) {
+      console.log('here');
+    }
+
+
   }
 
   nextMove = () => {
@@ -176,7 +188,7 @@ class EasyCompGameContainer extends React.Component {
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[2] === 'x') {
-        if (this.state.game[1] === 'o' && this.state.currentPlayer === 'o') {
+        if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
           if (this.state.game[7] === null && this.state.currentPlayer === 'o') {
             this.state.game[7] = this.state.currentPlayer
             this.setState({currentPlayer: 'x'})
