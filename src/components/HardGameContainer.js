@@ -131,6 +131,16 @@ class HardGameContainer extends React.Component {
         this.props.announceWinner('o')
       }
     }
+    let newArr = []
+    for(let i = 0; i < this.state.game.length; i++) {
+      if (this.state.game[i] === null) {
+        newArr.push(this.state.game[i])
+      }
+    }
+    if (newArr.length === 0) {
+      console.log('here');
+      this.props.announceStaleMate()
+    }
   }
 
   nextMove = () => {
