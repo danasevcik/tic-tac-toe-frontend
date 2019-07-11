@@ -27,6 +27,8 @@ class App extends React.Component {
     if (this.state.startEasy) {
       alert('Game In Session!')
     }
+
+    this.setState({stalemate: false})
     this.setState({winner: [null, null]})
     this.setState({startHard: false})
     this.setState({startEasyCompGame: false})
@@ -52,6 +54,7 @@ class App extends React.Component {
       alert('Game In Session!')
     }
 
+    this.setState({stalemate: false})
     this.setState({winner: [null, null]})
     this.setState({startEasy: false})
     this.setState({startEasyCompGame: false})
@@ -78,6 +81,7 @@ class App extends React.Component {
       alert('Game In Session!')
     }
 
+    this.setState({stalemate: false})
     this.setState({winner: [null, null]})
     this.setState({startEasy: false})
     this.setState({startHard: false})
@@ -148,6 +152,8 @@ class App extends React.Component {
   announceStaleMate = () => {
     console.log('stalemate');
     setTimeout(() => {
+      this.setState({startEasyCompGame: false})
+      this.setState({start: false})
       this.setState({stalemate: true})
     }, 1000)
 
