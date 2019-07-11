@@ -19,7 +19,8 @@ class App extends React.Component {
     startEasy: false,
     startHard: false,
     startEasyCompGame: false,
-    winner: [null, null]
+    winner: [null, null],
+    stalemate: false
   }
 
   startEasyGame = () => {
@@ -146,6 +147,8 @@ class App extends React.Component {
 
   announceStaleMate = () => {
     console.log('stalemate');
+    this.setState({stalemate: true})
+
   }
 
   setUser = (user) => {
@@ -186,6 +189,9 @@ class App extends React.Component {
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'o') &&
           <WinnerO />
+        }
+        {this.state.stalemate &&
+          <StaleMate />
         }
       </div>
     );
