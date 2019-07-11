@@ -147,7 +147,9 @@ class App extends React.Component {
 
   announceStaleMate = () => {
     console.log('stalemate');
-    this.setState({stalemate: true})
+    setTimeout(() => {
+      this.setState({stalemate: true})
+    }, 1000)
 
   }
 
@@ -178,10 +180,10 @@ class App extends React.Component {
         {(this.state.startEasy && !this.state.winner[0]) &&
           <GameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} announceStaleMate={this.announceStaleMate}/>
         }
-        {(this.state.startHard && !this.state.winner[0]) &&
+        {((this.state.startHard && !this.state.winner[0]) && !this.state.stalemate) &&
           <HardGameContainer announceWinner={(letter) => this.announceWinnerHard(letter)} announceStaleMate={this.announceStaleMate}/>
         }
-        {(this.state.startEasyCompGame && !this.state.winner[0]) &&
+        {((this.state.startEasyCompGame && !this.state.winner[0]) && !this.state.stalemate) &&
           <EasyCompGameContainer announceWinner={(letter) => this.announceWinnerEasy(letter)} announceStaleMate={this.announceStaleMate}/>
         }
         {(this.state.winner[0] === true && this.state.winner[1] === 'x') &&
@@ -191,7 +193,7 @@ class App extends React.Component {
           <WinnerO />
         }
         {this.state.stalemate &&
-          <StaleMate />
+          <GameOver />
         }
       </div>
     );

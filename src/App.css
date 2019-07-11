@@ -147,6 +147,17 @@ html, body {
   background-color: yellow;
 }
 
+#stalemate {
+  border: 5px black solid;
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 2%;
+  padding-top: 10%;
+  height: 60%;
+  width: 80%;
+  background-color: yellow;
+}
+
 .end-img {
   height: 45%;
   width: 30%;
