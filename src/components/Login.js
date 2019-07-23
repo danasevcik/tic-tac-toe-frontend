@@ -40,15 +40,16 @@ class Login extends React.Component {
   }
 
   handleLogin = (state) => {
+    let token = localStorage.getItem("token");
     fetch(`http://localhost:3000/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        accepts: "application/json"
+        accepts: "application/json",
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify({
         user: {
-          name: state.name,
           username: state.username,
           password: state.password
         }
@@ -97,7 +98,6 @@ class Login extends React.Component {
       }
       {this.state.old &&
         <div>
-          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
           <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
           <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
           <button onClick={() => {this.handleLogin(this.state)}}>SUBMIT</button>
