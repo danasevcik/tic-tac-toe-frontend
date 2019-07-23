@@ -97,7 +97,7 @@ class Login extends React.Component {
         <div>
           <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
           <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="password" placeholder="PASSWORD"></input>
+          <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
           <button onClick={() => {this.handleLogin(this.state)}}>SUBMIT</button>
           <button onClick={() => {this.goBack()}}>BACK</button>
         </div>
