@@ -40,7 +40,7 @@ class Login extends React.Component {
   }
 
   handleLogin = (state) => {
-    fetch(`http://localhost:3000/find-user`, {
+    fetch(`http://localhost:3000/login`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,7 +48,9 @@ class Login extends React.Component {
       },
       body: JSON.stringify({
         user: {
-          name: state.name
+          name: state.name,
+          username: state.username,
+          password: state.password
         }
       })
     })
