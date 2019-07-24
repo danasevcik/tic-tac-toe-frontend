@@ -8,17 +8,21 @@ class ScoreBoard extends React.Component {
   }
 
   getHighScores = () => {
-    fetch('http://localhost:3000/users')
-    .then(res => res.json())
-    .then(data => {
-      debugger;
-      let sortedUsers = data.users.sort((userA, userB) => {
-        return userB.high_score - userA.high_score
+    let token = localStorage.getItem("token");
+    if (!!token) {
+      fetch("http://localhost:3000/users")
+      .then(res => res.json())
+      .then(data => {
+        debugger;
+        let sortedUsers = data.users.sort((userA, userB) => {
+          return userB.high_score - userA.high_score
+        })
+        let highScoreUsers = sortedUsers.slice(0,5)
+        this.setState({users: highScoreUsers})
       })
-      let highScoreUsers = sortedUsers.slice(0,5)
-      this.setState({users: highScoreUsers})
-    })
-  }
+    }
+
+    }
 
   renderUsers = (users) => {
     this.state.users = null
