@@ -11,6 +11,7 @@ class ScoreBoard extends React.Component {
     fetch('http://localhost:3000/users')
     .then(res => res.json())
     .then(data => {
+      debugger;
       let sortedUsers = data.users.sort((userA, userB) => {
         return userB.high_score - userA.high_score
       })

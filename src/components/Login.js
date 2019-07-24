@@ -18,6 +18,8 @@ class Login extends React.Component {
   }
 
   handleCreate = (state) => {
+    // create new user
+    // send to users controller
     fetch(`http://localhost:3000/users`, {
       method: "POST",
       headers: {
@@ -40,6 +42,8 @@ class Login extends React.Component {
   }
 
   handleLogin = (state) => {
+    // login existing user
+    // send to auth controller
     let token = localStorage.getItem("token");
     fetch(`http://localhost:3000/login`, {
       method: "POST",
@@ -56,7 +60,7 @@ class Login extends React.Component {
       })
     })
     .then(res => res.json())
-    .then(data => this.props.setUser(data.user))
+    .then(data => this.props.setUser(data))
     .then(this.setState({loggedIn: true}))
   }
 

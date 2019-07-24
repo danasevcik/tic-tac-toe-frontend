@@ -159,8 +159,10 @@ class App extends React.Component {
 
   }
 
-  setUser = (user) => {
-    this.setState({ user })
+  setUser = (data) => {
+    debugger
+    localStorage.setItem("token", data.jwt);
+    this.setState({ user: data.user })
   }
 
   render() {
