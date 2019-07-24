@@ -41,7 +41,7 @@ class Login extends React.Component {
       if (data.message) {
         alert(data.message);
       } else {
-        this.props.setUser(data.user);
+        this.props.setUser(data);
         this.setState({loggedIn: true})
       }
     })
@@ -67,8 +67,14 @@ class Login extends React.Component {
       })
     })
     .then(res => res.json())
-    .then(data => this.props.setUser(data))
-    .then(this.setState({loggedIn: true}))
+    .then(data => {
+      if (data.message) {
+        alert(data.message);
+      } else {
+        this.props.setUser(data);
+        this.setState({loggedIn: true})
+      }
+    })
   }
 
   handleNew = () => {
