@@ -37,8 +37,15 @@ class Login extends React.Component {
       })
     })
     .then(res => res.json())
-    .then(data => this.props.setUser(data.user))
-    .then(this.setState({loggedIn: true}))
+    .then(data => {
+      if (data.message) {
+        alert(data.message);
+      } else {
+        this.props.setUser(data.user);
+        this.setState({loggedIn: true})
+      }
+    })
+
   }
 
   handleLogin = (state) => {
