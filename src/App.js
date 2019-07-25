@@ -110,19 +110,24 @@ class App extends React.Component {
 
   announceWinnerEasy = (letter) => {
     if (letter === 'x') {
-      fetch(`http://localhost:3000/easy-user`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          accepts: "application/json"
-        },
-        body: JSON.stringify({
-          user: {
-            user_id: this.state.user.id,
-            score: 5
-          }
+      let token = localStorage.getItem("token");
+      if (!!token) {
+        fetch(`http://localhost:3000/easy-user`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            accepts: "application/json"
+          },
+          body: JSON.stringify({
+            user: {
+              user_id: this.state.user.id,
+              score: 5
+            }
+          })
         })
-      })
+      } else {
+        console.log('no token');
+      }
     }
     setTimeout(() => {
       this.setState({startEasy: false})
@@ -133,6 +138,8 @@ class App extends React.Component {
 
   announceWinnerHard = (letter) => {
     if (letter === 'x') {
+      let token = localStorage.getItem("token");
+      if (!!token) {
       fetch(`http://localhost:3000/hard-user`, {
         method: "POST",
         headers: {
@@ -146,6 +153,9 @@ class App extends React.Component {
           }
         })
       })
+    } else {
+      console.log('no token');
+    }
     }
     setTimeout(() => {
       this.setState({startHard: false})
