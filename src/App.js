@@ -34,19 +34,24 @@ class App extends React.Component {
     this.setState({startEasyCompGame: false})
     this.setState({startEasy: true})
     this.setState({start: true})
-    fetch('http://localhost:3000/easy-session', {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        accepts: "application/json"
-      },
-      body: JSON.stringify({
-        session: {
-          user_id: this.state.user.id,
-          score: 5
-        }
+    let token = localStorage.getItem("token");
+    if (!!token) {
+      fetch('http://localhost:3000/easy-session', {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json"
+        },
+        body: JSON.stringify({
+          session: {
+            user_id: this.state.user.id,
+            score: 5
+          }
+        })
       })
-    })
+    } else {
+      console.log('no token');
+    }
   }
 
   startHardGame = () => {
@@ -150,7 +155,6 @@ class App extends React.Component {
   }
 
   announceStaleMate = () => {
-    console.log('stalemate');
     setTimeout(() => {
       this.setState({startEasyCompGame: false})
       this.setState({start: false})
