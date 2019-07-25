@@ -23,6 +23,35 @@ class App extends React.Component {
     stalemate: false
   }
 
+  componentDidMount() {
+    this.getUser()
+  }
+
+  getUser = () => {
+    console.log('getting user');
+    let token = localStorage.getItem("token");
+    if (!!token) {
+      fetch("http://localhost:3000/get_user", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json",
+          Authorization: `${token}`
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          alert(data.message);
+        } else {
+          this.setUser(data);
+        }
+      })
+    } else {
+      console.log('no token');
+    }
+  }
+
   startEasyGame = () => {
     if (this.state.startEasy) {
       alert('Game In Session!')
@@ -92,20 +121,24 @@ class App extends React.Component {
     this.setState({startHard: false})
     this.setState({startEasyCompGame: true})
     this.setState({start: true})
-
-    fetch('http://localhost:3000/easy-comp-session', {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        accepts: "application/json"
-      },
-      body: JSON.stringify({
-        session: {
-          user_id: this.state.user.id,
-          score: 20
-        }
+    let token = localStorage.getItem("token");
+    if (!!token) {
+      fetch('http://localhost:3000/easy-comp-session', {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          accepts: "application/json"
+        },
+        body: JSON.stringify({
+          session: {
+            user_id: this.state.user.id,
+            score: 20
+          }
+        })
       })
-    })
+    } else {
+      console.log('no token');
+    }
   }
 
   announceWinnerEasy = (letter) => {
