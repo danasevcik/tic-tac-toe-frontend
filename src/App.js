@@ -206,6 +206,19 @@ class App extends React.Component {
 
   }
 
+  logout = () => {
+    localStorage.removeItem("token")
+    this.setState({
+      user: null,
+      start: false,
+      startEasy: false,
+      startHard: false,
+      startEasyCompGame: false,
+      winner: [null, null],
+      stalemate: false
+     })
+  }
+
   setUser = (data) => {
     localStorage.setItem("token", data.jwt);
     this.setState({ user: data.user })
