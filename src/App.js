@@ -5,6 +5,7 @@ import GameContainer from './components/GameContainer'
 import HardGameContainer from './components/HardGameContainer'
 import EasyCompGameContainer from './components/EasyCompGameContainer'
 import ScoreBoard from './components/ScoreBoard'
+import ChangeColors from './components/ChangeColors'
 
 
 import WinnerX from './components/WinnerX'
@@ -20,7 +21,8 @@ class App extends React.Component {
     startHard: false,
     startEasyCompGame: false,
     winner: [null, null],
-    stalemate: false
+    stalemate: false,
+    changeColor: false
   }
 
   componentDidMount() {
@@ -215,13 +217,20 @@ class App extends React.Component {
       startHard: false,
       startEasyCompGame: false,
       winner: [null, null],
-      stalemate: false
+      stalemate: false,
+      changeColor: false
      })
   }
 
   setUser = (data) => {
     localStorage.setItem("token", data.jwt);
     this.setState({ user: data.user })
+  }
+
+  changeColors = () => {
+    this.setState({
+      changeColor: true
+    })
   }
 
   render() {
@@ -232,6 +241,8 @@ class App extends React.Component {
 
         {(!!token && this.state.user) &&
           <div>
+
+            <button onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
             <button onClick={() => {this.startEasyGame()}}>START EASY GAME</button>
             <button onClick={() => {this.startHardGame()}}>START HARD GAME</button>
             <button onClick={() => {this.startEasyCompGame()}}>START HARDER GAME</button>
@@ -239,8 +250,12 @@ class App extends React.Component {
           </div>
         }
 
-        {this.state.user && 
+        {this.state.user &&
           <ScoreBoard winner={this.state.winner} user={this.state.user}/>
+        }
+
+        {this.state.changeColor &&
+          <ChangeColors />
         }
 
         {(!this.state.user) &&

@@ -78,73 +78,53 @@ html, body {
 }
 
 #empty-space {
-  z-index: 3;
-  position: absolute;
-  height: 25.2%;
-  width: 25.5%;
+  height: 100%;
+  width: 100%;
   background-color: lightgrey;
 }
 
 #hard-empty-space {
-  z-index: 3;
-  position: absolute;
-  height: 18.5%;
-  width: 18.5%;
+  height: 100%;
+  width: 100%;
   background-color: lightgrey;
 }
 
 #x {
-  z-index: 3;
-  position: absolute;
-  height: 25.2%;
-  width: 25.5%;
-  background-color: pink;
+  height: 100%;
+  width: 100%;
+  background-color: magenta;
 }
 
 #hard-x {
-  z-index: 3;
-  position: absolute;
-  height: 18.5%;
-  width: 18.5%;
-  background-color: pink;
+  height: 100%;
+  width: 100%;
+  background-color: magenta;
 }
 
 #o {
-  z-index: 3;
-  position: absolute;
-  height: 25.2%;
-  width: 25.5%;
-  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  background-color: gold;
 }
 
 #hard-o {
-  z-index: 3;
-  position: absolute;
-  height: 18.5%;
-  width: 18.5%;
-  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  background-color: gold;
 }
 
 #winner-x {
   border: 5px black solid;
   padding: 10px;
-  margin-left: 10%;
-  margin-top: 2%;
-  padding-top: 10%;
-  height: 60%;
-  width: 80%;
-  background-color: pink;
+  margin: 2% 5%;
+  background-color: magenta;
 }
 
 #winner-o {
   border: 5px black solid;
   padding: 10px;
-  margin-left: 10%;
-  margin-top: 2%;
-  padding-top: 10%;
-  height: 60%;
-  width: 80%;
-  background-color: yellow;
+  margin: 2% 5%;
+  background-color: gold;
 }
 
 .end-img {
@@ -163,11 +143,7 @@ html, body {
 #game-over {
   border: 5px black solid;
   padding: 10px;
-  margin-left: 10%;
-  margin-top: 2%;
-  padding-top: 10%;
-  height: 60%;
-  width: 80%;
+  margin: 2% 5%;
   background-color: lightgrey;
 }
 
