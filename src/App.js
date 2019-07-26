@@ -239,7 +239,7 @@ class App extends React.Component {
           </div>
         }
 
-        {this.state.user &&
+        {this.state.user && 
           <ScoreBoard winner={this.state.winner} user={this.state.user}/>
         }
 
