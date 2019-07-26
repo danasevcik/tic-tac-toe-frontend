@@ -229,19 +229,18 @@ class App extends React.Component {
     return (
       <div className="App">
         {<h1>TIC TAC TOE LAND 💫</h1>}
-        {(!!token) &&
-          <button onClick={() => {this.logout()}}>LOGOUT</button>
-        }
 
-        {this.state.user &&
-          <ScoreBoard winner={this.state.winner} user={this.state.user}/>
-        }
-        {(this.state.user) &&
+        {(!!token && this.state.user) &&
           <div>
             <button onClick={() => {this.startEasyGame()}}>START EASY GAME</button>
             <button onClick={() => {this.startHardGame()}}>START HARD GAME</button>
             <button onClick={() => {this.startEasyCompGame()}}>START HARDER GAME</button>
+            <button onClick={() => {this.logout()}}>LOGOUT</button>
           </div>
+        }
+
+        {this.state.user &&
+          <ScoreBoard winner={this.state.winner} user={this.state.user}/>
         }
 
         {(!this.state.user) &&
