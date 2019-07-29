@@ -11,6 +11,10 @@ class ChangeColors extends React.Component {
     this.setState({value: e.target.value})
   }
 
+  handleSubmit = () => {
+    console.log(this.state.value);
+  }
+
   render() {
     let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'aliceblue', 'aqua',
     'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blueviolet', 'brown',
