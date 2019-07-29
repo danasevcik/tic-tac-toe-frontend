@@ -229,7 +229,7 @@ class App extends React.Component {
 
   changeColors = () => {
     this.setState({
-      changeColor: true
+      changeColor: !this.state.changeColor
     })
   }
 
@@ -255,7 +255,7 @@ class App extends React.Component {
         }
 
         {this.state.changeColor &&
-          <ChangeColors />
+          <ChangeColors changeColor={this.changeColors}/>
         }
 
         {(!this.state.user) &&
