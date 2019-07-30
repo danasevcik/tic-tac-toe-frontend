@@ -149,10 +149,8 @@ class ChangeColors extends React.Component {
               <option value="white">White</option>
               <option value="whitesmoke">White Smoke</option>
               <option value="yellow">Yellow</option>
-
             </select>
           </label>
-
           <button onClick={this.handleSubmit}>SUBMIT</button>
         </form>
       </div>
