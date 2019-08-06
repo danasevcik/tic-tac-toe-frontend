@@ -243,9 +243,9 @@ class App extends React.Component {
           <div>
 
             <button onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
-            <button onClick={() => {this.startEasyGame()}}>START EASY GAME</button>
-            <button onClick={() => {this.startHardGame()}}>START HARD GAME</button>
-            <button onClick={() => {this.startEasyCompGame()}}>START HARDER GAME</button>
+            <button onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
+            <button onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
+            <button onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
             <button onClick={() => {this.logout()}}>LOGOUT</button>
           </div>
         }
