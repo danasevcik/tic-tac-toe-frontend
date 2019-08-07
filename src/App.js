@@ -12,6 +12,8 @@ import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
 import GameOver from './components/GameOver'
 
+import { Button } from 'semantic-ui-react'
+
 class App extends React.Component {
 
   state = {
@@ -242,7 +244,7 @@ class App extends React.Component {
         {(!!token && this.state.user) &&
           <div>
 
-            <button onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
+            <button class="ui button" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
             <button onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
             <button onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
             <button onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
