@@ -250,9 +250,7 @@ class App extends React.Component {
       startEasy: false,
       startHard: false,
       startEasyCompGame: false,
-      start: false
-    })
-    this.setState({
+      start: false,
       changeColor: !this.state.changeColor
     })
   }
@@ -263,7 +261,6 @@ class App extends React.Component {
       <div className="App">
         {(!!token && this.state.user) &&
           <div class="ui secondary pointing menu">
-
             <button id="customize-colors" class="active item" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
             <button id="easy-game" class="item" onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
             <button id="hard-game" class="item" onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
