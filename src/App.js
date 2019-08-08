@@ -24,7 +24,7 @@ class App extends React.Component {
     startEasyCompGame: false,
     winner: [null, null],
     stalemate: false,
-    changeColor: false
+    changeColor: true
   }
 
   componentDidMount() {
@@ -70,6 +70,10 @@ class App extends React.Component {
       changeColor: false,
       start: true
     })
+    document.getElementById("customize-colors").className = "item"
+    document.getElementById("easy-game").className = "active item"
+    document.getElementById("hard-game").className = "item"
+    document.getElementById("comp-game").className = "item"
 
     let token = localStorage.getItem("token");
     if (!!token) {
@@ -106,6 +110,11 @@ class App extends React.Component {
       start: true
     })
 
+    document.getElementById("customize-colors").className = "item"
+    document.getElementById("easy-game").className = "item"
+    document.getElementById("hard-game").className = "active item"
+    document.getElementById("comp-game").className = "item"
+
     fetch('http://localhost:3000/hard-session', {
       method: "POST",
       headers: {
@@ -135,6 +144,12 @@ class App extends React.Component {
       changeColor: false,
       start: true
     })
+
+    document.getElementById("customize-colors").className = "item"
+    document.getElementById("easy-game").className = "item"
+    document.getElementById("hard-game").className = "item"
+    document.getElementById("comp-game").className = "active item"
+
     let token = localStorage.getItem("token");
     if (!!token) {
       fetch('http://localhost:3000/easy-comp-session', {
@@ -246,6 +261,11 @@ class App extends React.Component {
   }
 
   changeColors = () => {
+    document.getElementById("customize-colors").className = "active item"
+    document.getElementById("easy-game").className = "item"
+    document.getElementById("hard-game").className = "item"
+    document.getElementById("comp-game").className = "item"
+
     this.setState({
       startEasy: false,
       startHard: false,
