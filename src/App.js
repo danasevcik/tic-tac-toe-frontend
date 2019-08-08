@@ -231,6 +231,12 @@ class App extends React.Component {
 
   changeColors = () => {
     this.setState({
+      startEasy: false,
+      startHard: false,
+      startEasyCompGame: false,
+      start: false
+    })
+    this.setState({
       changeColor: !this.state.changeColor
     })
   }
