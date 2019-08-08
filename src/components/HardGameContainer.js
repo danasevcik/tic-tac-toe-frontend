@@ -10,6 +10,14 @@ class HardGameContainer extends React.Component {
     currentPlayer: 'x'
   }
 
+  componentDidMount() {
+    // scroll the board into view
+    let board = document.getElementById("board-container")
+    if (board) {
+      board.scrollIntoView()
+    }
+  }
+
   getComponent = (id) => {
     if (this.state.game[id] === 'x') {
       return <X hard={true}/>

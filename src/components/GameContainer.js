@@ -10,6 +10,14 @@ class GameContainer extends React.Component {
     currentPlayer: 'x'
   }
 
+  componentDidMount() {
+    // scroll the board into view
+    let board = document.getElementById("board-container")
+    if (board) {
+      board.scrollIntoView()
+    }
+  }
+
   getComponent = (id) => {
     if (this.state.game[id] === 'x') {
       return <X />
@@ -151,6 +159,7 @@ class GameContainer extends React.Component {
 
   render() {
     this.nextMove()
+
     return (
       <div id="board-container">
         {!!this.props.user ? <h1>{this.props.user.name.toUpperCase()}! LET'S SEE WHAT YOU'VE GOT</h1> : <h1>Welcome</h1>}
