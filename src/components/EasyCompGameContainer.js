@@ -145,22 +145,28 @@ class EasyCompGameContainer extends React.Component {
     setTimeout(() => {
       if (this.state.game[4] === null) {
         this.state.game[4] = this.state.currentPlayer
-        this.setState({currentPlayer: 'x'})
-        this.setState({game: [...this.state.game]})
+        this.setState({
+          currentPlayer: 'x',
+          game: [...this.state.game]
+        })
       }
       if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
         if (this.state.game[2] === null) {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
         if (this.state.game[4] === 'o' && this.state.game[2] === 'o') {
           if (this.state.game[6] === null && this.state.currentPlayer === 'o') {
             this.state.game[6] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
@@ -168,70 +174,88 @@ class EasyCompGameContainer extends React.Component {
         if (this.state.game[4] === 'o' && this.state.game[2] === 'o') {
           if (this.state.game[6] === 'x' && this.state.currentPlayer === 'o') {
             this.state.game[3] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[6] === 'x') {
         if (this.state.currentPlayer === 'o' && this.state.game[3] === null) {
           this.state.game[3] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[6] === 'x') {
         if (this.state.game[5] === 'x' && this.state.currentPlayer === 'o') {
           if (this.state.game[7] === null) {
             this.state.game[7] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[2] === 'x') {
         if (this.state.game[1] === null && this.state.currentPlayer === 'o') {
           this.state.game[1] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[2] === 'x') {
         if (this.state.game[1] === 'o' && this.state.game[4] === 'o') {
           if (this.state.game[7] === null && this.state.currentPlayer === 'o') {
             this.state.game[7] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[1] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[2] === 'x' && this.state.game[8] === 'x') {
         if (this.state.game[5] === null && this.state.currentPlayer === 'o') {
           this.state.game[5] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[2] === 'x' && this.state.game[8] === 'x') {
         if (this.state.game[3] === 'x' && this.state.game[1] === null) {
           if (this.state.currentPlayer === 'o') {
             this.state.game[1] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
@@ -239,24 +263,30 @@ class EasyCompGameContainer extends React.Component {
         if (this.state.game[3] === 'x' && this.state.game[7] === 'x') {
           if (this.state.game[6] === null & this.state.currentPlayer === 'o') {
             this.state.game[6] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[8] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[0] === 'x' && this.state.game[2] === 'x') {
         if (this.state.game[7] === 'x' && this.state.game[1] === 'o') {
           if (this.state.game[3] === null && this.state.currentPlayer === 'o') {
             this.state.game[3] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
@@ -265,8 +295,10 @@ class EasyCompGameContainer extends React.Component {
           if (this.state.game[3] === 'o' && this.state.game[5] === 'x') {
             if (this.state.game[8] === null && this.state.currentPlayer === 'o') {
               this.state.game[8] = this.state.currentPlayer
-              this.setState({currentPlayer: 'x'})
-              this.setState({game: [...this.state.game]})
+              this.setState({
+                currentPlayer: 'x',
+                game: [...this.state.game]
+              })
             }
           }
         }
@@ -274,39 +306,49 @@ class EasyCompGameContainer extends React.Component {
       if (this.state.game[3] === 'x' && this.state.game[6] === 'x') {
         if (this.state.game[0] === null && this.state.currentPlayer === 'o') {
           this.state.game[0] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[3] === 'x' && this.state.game[6] === 'x') {
         if (this.state.game[0] === 'o' && this.state.game[8] === 'x') {
           if (this.state.game[7] === null && this.state.currentPlayer) {
             this.state.game[7] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[3] === 'x' && this.state.game[2] === 'x') {
         if (this.state.game[8] === null && this.state.currentPlayer === 'o') {
           this.state.game[8] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[8] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[8] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[6] === 'x' && this.state.game[2] === 'o') {
           if (this.state.game[7] === null & this.state.currentPlayer === 'o') {
             this.state.game[7] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
@@ -315,8 +357,10 @@ class EasyCompGameContainer extends React.Component {
           if (this.state.game[7] === 'o' & this.state.game[1] === 'x') {
             if (this.state.game[0] === null && this.state.currentPlayer === 'o') {
               this.state.game[0] = this.state.currentPlayer
-              this.setState({currentPlayer: 'x'})
-              this.setState({game: [...this.state.game]})
+              this.setState({
+                currentPlayer: 'x',
+                game: [...this.state.game]
+              })
             }
           }
         }
@@ -324,84 +368,106 @@ class EasyCompGameContainer extends React.Component {
       if (this.state.game[6] === 'x' && this.state.game[8] === 'x') {
         if (this.state.game[7] === null && this.state.currentPlayer === 'o') {
           this.state.game[7] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[7] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[8] === null && this.state.currentPlayer === 'o') {
           this.state.game[8] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[6] === 'x' && this.state.game[2] === 'o') {
           if (this.state.game[0] === null && this.state.currentPlayer === 'o') {
             this.state.game[0] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[7] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[7] === 'x') {
         if (this.state.game[6] === 'x' && this.state.game[7] === 'x') {
           if (this.state.game[8] === null && this.state.currentPlayer === 'o') {
             this.state.game[8] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[3] === 'x' && this.state.game[5] === 'x') {
         if (this.state.game[2] === null && this.state.currentPlayer === 'o') {
           this.state.game[2] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[3] === 'x' && this.state.game[7] === 'x') {
         if (this.state.game[6] === null && this.state.currentPlayer === 'o') {
           this.state.game[6] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[3] === 'x') {
         if (this.state.game[0] === null && this.state.currentPlayer === 'o') {
           this.state.game[0] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[1] === 'x' && this.state.game[3] === 'x') {
         if (this.state.game[8] === 'x' && this.state.game[2] === null) {
           if (this.state.currentPlayer === 'o') {
             this.state.game[2] = this.state.currentPlayer
-            this.setState({currentPlayer: 'x'})
-            this.setState({game: [...this.state.game]})
+            this.setState({
+              currentPlayer: 'x',
+              game: [...this.state.game]
+            })
           }
         }
       }
       if (this.state.game[2] === 'x' && this.state.game[6] === 'x') {
         if (this.state.game[0] === null && this.state.currentPlayer === 'o') {
           this.state.game[0] = this.state.currentPlayer
-          this.setState({currentPlayer: 'x'})
-          this.setState({game: [...this.state.game]})
+          this.setState({
+            currentPlayer: 'x',
+            game: [...this.state.game]
+          })
         }
       }
       if (this.state.game[2] === 'x' && this.state.game[7] === 'x') {

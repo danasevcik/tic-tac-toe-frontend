@@ -231,6 +231,36 @@ class App extends React.Component {
     }, 1000)
   }
 
+  announceWinnerCompEasy = (letter) => {
+    if (letter === 'x') {
+      let token = localStorage.getItem("token");
+      if (!!token) {
+        fetch(`http://localhost:3000/easy-comp-user`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            accepts: "application/json"
+          },
+          body: JSON.stringify({
+            user: {
+              user_id: this.state.user.id,
+              score: 15
+            }
+          })
+        })
+      } else {
+        console.log('no token');
+      }
+    }
+    setTimeout(() => {
+      this.setState({
+        startEasy: false,
+        start: false,
+        winner: [true, letter]
+      })
+    }, 1000)
+  }
+
   announceStaleMate = () => {
     setTimeout(() => {
       this.setState({
@@ -292,7 +322,7 @@ class App extends React.Component {
             </div>
           </div>
         }
-        {<h1>TIC TAC TOE LAND 💫</h1>}
+        {<h1>TIC TAC TOE</h1>}
 
 
         {this.state.user &&
