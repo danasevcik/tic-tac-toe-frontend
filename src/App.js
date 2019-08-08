@@ -61,12 +61,16 @@ class App extends React.Component {
       alert('Game In Session!')
     }
 
-    this.setState({stalemate: false})
-    this.setState({winner: [null, null]})
-    this.setState({startHard: false})
-    this.setState({startEasyCompGame: false})
-    this.setState({startEasy: true})
-    this.setState({start: true})
+    this.setState({
+      stalemate: false,
+      winner: [null, null],
+      startHard: false,
+      startEasyCompGame: false,
+      startEasy: true,
+      changeColor: false,
+      start: true
+    })
+
     let token = localStorage.getItem("token");
     if (!!token) {
       fetch('http://localhost:3000/easy-session', {
@@ -92,12 +96,15 @@ class App extends React.Component {
       alert('Game In Session!')
     }
 
-    this.setState({stalemate: false})
-    this.setState({winner: [null, null]})
-    this.setState({startEasy: false})
-    this.setState({startEasyCompGame: false})
-    this.setState({startHard: true})
-    this.setState({start: true})
+    this.setState({
+      stalemate: false,
+      winner: [null, null],
+      startEasy: false,
+      startEasyCompGame: false,
+      startHard: true,
+      changeColor: false,
+      start: true
+    })
 
     fetch('http://localhost:3000/hard-session', {
       method: "POST",
@@ -119,12 +126,15 @@ class App extends React.Component {
       alert('Game In Session!')
     }
 
-    this.setState({stalemate: false})
-    this.setState({winner: [null, null]})
-    this.setState({startEasy: false})
-    this.setState({startHard: false})
-    this.setState({startEasyCompGame: true})
-    this.setState({start: true})
+    this.setState({
+      stalemate: false,
+      winner: [null, null],
+      startEasy: false,
+      startHard: false,
+      startEasyCompGame: true,
+      changeColor: false,
+      start: true
+    })
     let token = localStorage.getItem("token");
     if (!!token) {
       fetch('http://localhost:3000/easy-comp-session', {
@@ -167,9 +177,11 @@ class App extends React.Component {
       }
     }
     setTimeout(() => {
-      this.setState({startEasy: false})
-      this.setState({start: false})
-      this.setState({winner: [true, letter]})
+      this.setState({
+        startEasy: false,
+        start: false,
+        winner: [true, letter]
+      })
     }, 1000)
   }
 
@@ -195,17 +207,21 @@ class App extends React.Component {
     }
     }
     setTimeout(() => {
-      this.setState({startHard: false})
-      this.setState({start: false})
-      this.setState({winner: [true, letter]})
+      this.setState({
+        startHard: false,
+        start: false,
+        winner: [true, letter]
+      })
     }, 1000)
   }
 
   announceStaleMate = () => {
     setTimeout(() => {
-      this.setState({startEasyCompGame: false})
-      this.setState({start: false})
-      this.setState({stalemate: true})
+      this.setState({
+        startEasyCompGame: false,
+        start: false,
+        stalemate: true
+      })
     }, 1000)
 
   }
@@ -248,12 +264,12 @@ class App extends React.Component {
         {(!!token && this.state.user) &&
           <div class="ui secondary pointing menu">
 
-            <button class="active item" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
-            <button class="item" onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
-            <button class="item" onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
-            <button class="item" onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
+            <button id="customize-colors" class="active item" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
+            <button id="easy-game" class="item" onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
+            <button id="hard-game" class="item" onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
+            <button id="comp-game" class="item" onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
             <div class="right menu">
-              <button class="item" onClick={() => {this.logout()}}>LOGOUT</button>
+              <button id="logout" class="item" onClick={() => {this.logout()}}>LOGOUT</button>
             </div>
           </div>
         }
