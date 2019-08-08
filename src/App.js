@@ -242,13 +242,15 @@ class App extends React.Component {
         {<h1>TIC TAC TOE LAND 💫</h1>}
 
         {(!!token && this.state.user) &&
-          <div>
+          <div class="ui secondary pointing menu">
 
-            <button class="ui button" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
-            <button onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
-            <button onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
-            <button onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
-            <button onClick={() => {this.logout()}}>LOGOUT</button>
+            <button class="active item" onClick={() => {this.changeColors()}}>CUSTOMIZE COLORS</button>
+            <button class="item" onClick={() => {this.startEasyGame()}}>3 X 3 EASY</button>
+            <button class="item" onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
+            <button class="item" onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
+            <div class="right menu">
+              <button class="item" onClick={() => {this.logout()}}>LOGOUT</button>
+            </div>
           </div>
         }
 
