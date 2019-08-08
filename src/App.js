@@ -245,8 +245,6 @@ class App extends React.Component {
     let token = localStorage.getItem("token");
     return (
       <div className="App">
-        {<h1>TIC TAC TOE LAND 💫</h1>}
-
         {(!!token && this.state.user) &&
           <div class="ui secondary pointing menu">
 
@@ -259,6 +257,8 @@ class App extends React.Component {
             </div>
           </div>
         }
+        {<h1>TIC TAC TOE LAND 💫</h1>}
+
 
         {this.state.user &&
           <ScoreBoard winner={this.state.winner} user={this.state.user}/>
