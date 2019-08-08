@@ -12,8 +12,6 @@ import WinnerX from './components/WinnerX'
 import WinnerO from './components/WinnerO'
 import GameOver from './components/GameOver'
 
-import { Button } from 'semantic-ui-react'
-
 class App extends React.Component {
 
   state = {
@@ -329,7 +327,7 @@ class App extends React.Component {
           <ScoreBoard winner={this.state.winner} user={this.state.user}/>
         }
 
-        {this.state.changeColor &&
+        {(this.state.changeColor && this.state.user) &&
           <ChangeColors changeColor={this.changeColors}/>
         }
 

@@ -150,10 +150,14 @@ class GameContainer extends React.Component {
         let max = Math.floor(newArr.length - 1);
         let chosenIndex =  Math.floor(Math.random() * (max - min + 1)) + min
         let chosenGameIndex = newArr[chosenIndex]
+
         this.state.game[chosenGameIndex] = this.state.currentPlayer
-        this.setState({currentPlayer: 'x'})
-        this.setState({game: [...this.state.game]})}
+        this.setState({
+          currentPlayer: 'x',
+          game: [...this.state.game]
+        })
       }
+    }
     , 2000)
   }
 
