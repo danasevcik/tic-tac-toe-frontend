@@ -32,16 +32,14 @@ class ScoreBoard extends React.Component {
 
   render() {
     return (
-      <div>
-        <div id="high-scores">
-          <div id="high-scores-title">HIGH SCORES</div>
-          {!this.state.users &&
-            <div>
-              <iframe src="https://giphy.com/embed/3o7bu8sRnYpTOG1p8k" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pizza-loading-snacks-3o7bu8sRnYpTOG1p8k">via GIPHY</a></p>              {this.getHighScores()}
-            </div>
-          }
-          {!!this.state.users && this.renderUsers(this.state.users)}
-        </div>
+      <div id="high-scores">
+        <div id="high-scores-title">HIGH SCORES</div>
+        {!this.state.users &&
+          <div>
+            <iframe src="https://giphy.com/embed/3o7bu8sRnYpTOG1p8k" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pizza-loading-snacks-3o7bu8sRnYpTOG1p8k">via GIPHY</a></p>              {this.getHighScores()}
+          </div>
+        }
+        {!!this.state.users && this.renderUsers(this.state.users)}
       </div>
     )
   }

@@ -45,6 +45,7 @@ html, body {
 }
 
 #board-container {
+  margin-top: 2%;
   height: 100%;
   width: 100%;
 }
@@ -153,10 +154,15 @@ html, body {
 }
 
 #high-scores {
-  border: 5px black solid;
+  border: 2px black solid;
+  border-radius: 1em;
   margin: 10px 100px;
 }
 
 #high-scores-title {
   font-weight: bold;
+}
+
+#color-form {
+  margin: 5%;
 }

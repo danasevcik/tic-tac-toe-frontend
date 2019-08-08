@@ -183,10 +183,7 @@ class HardGameContainer extends React.Component {
     this.nextMove()
     return (
       <div id="board-container">
-        {!!this.props.user ? <h1>HEY {this.props.user.name.toUpperCase()}! LET'S DO THIS</h1> : <h1>Welcome</h1>}
-
         <div id="hard-board">
-
           <div className="spot" id='0'> {!!this.state.game[0] ? this.getComponent(0) : <EmptySpace hard={true} spotId={0} handleChooseSpace={() => {this.handleChooseSpace(0)}}/>} </div>
           <div className="spot" id='1'> {!!this.state.game[1] ? this.getComponent(1) : <EmptySpace hard={true} spotId={1} handleChooseSpace={() => {this.handleChooseSpace(1)}}/>} </div>
           <div className="spot" id='2'> {!!this.state.game[2] ? this.getComponent(2) : <EmptySpace hard={true} spotId={2} handleChooseSpace={() => {this.handleChooseSpace(2)}}/>} </div>
@@ -203,10 +200,7 @@ class HardGameContainer extends React.Component {
           <div className="spot" id='13'> {!!this.state.game[13] ? this.getComponent(13) : <EmptySpace hard={true} spotId={13} handleChooseSpace={() => {this.handleChooseSpace(13)}}/>} </div>
           <div className="spot" id='14'> {!!this.state.game[14] ? this.getComponent(14) : <EmptySpace hard={true} spotId={14} handleChooseSpace={() => {this.handleChooseSpace(14)}}/>} </div>
           <div className="spot" id='15'> {!!this.state.game[15] ? this.getComponent(15) : <EmptySpace hard={true} spotId={15} handleChooseSpace={() => {this.handleChooseSpace(15)}}/>} </div>
-
         </div>
-
-
       </div>
     )
   }

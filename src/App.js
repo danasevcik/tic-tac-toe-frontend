@@ -224,6 +224,7 @@ class App extends React.Component {
     setTimeout(() => {
       this.setState({
         startHard: false,
+        startEasyCompGame: false,
         start: false,
         winner: [true, letter]
       })
@@ -286,6 +287,7 @@ class App extends React.Component {
             <button id="hard-game" class="item" onClick={() => {this.startHardGame()}}>4 X 4 EASY</button>
             <button id="comp-game" class="item" onClick={() => {this.startEasyCompGame()}}>3 X 3 HARD</button>
             <div class="right menu">
+              <button id="name" class="item">WELCOME, {this.state.user.name.toUpperCase()}!</button>
               <button id="logout" class="item" onClick={() => {this.logout()}}>LOGOUT</button>
             </div>
           </div>

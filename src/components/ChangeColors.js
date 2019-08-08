@@ -19,7 +19,7 @@ class ChangeColors extends React.Component {
   render() {
 
     return (
-      <div class="ui form">
+      <div class="ui form" id="color-form">
         <div class="field">
           <label>Background Color</label>
           <select class="ui search dropdown" value={this.state.value} onChange={this.handleChange}>
