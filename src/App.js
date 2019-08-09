@@ -320,7 +320,9 @@ class App extends React.Component {
             </div>
           </div>
         }
-        {<h1>TIC TAC TOE</h1>}
+        {this.state.user &&
+          <h1>TIC TAC TOE</h1>
+        }
 
 
         {this.state.user &&

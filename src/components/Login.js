@@ -97,13 +97,15 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-
         {!this.state.loggedIn &&
-          <Button.Group size='large'>
-            <Button onClick={() => {this.handleNew()}}>SIGN UP</Button>
-            <Button.Or/>
-            <Button onClick={() => {this.handleOld()}}>LOGIN</Button>
-          </Button.Group>
+          <div id="login">
+            <h1>TIC TAC TOE</h1>
+            <Button.Group size='large'>
+              <Button onClick={() => {this.handleNew()}}>SIGN UP</Button>
+              <Button.Or/>
+              <Button onClick={() => {this.handleOld()}}>LOGIN</Button>
+            </Button.Group>
+          </div>
         }
 
       {this.state.new &&
