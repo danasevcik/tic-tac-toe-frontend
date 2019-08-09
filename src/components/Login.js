@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react'
 
 class Login extends React.Component {
 
@@ -96,12 +97,15 @@ class Login extends React.Component {
   render() {
     return (
       <div>
+
         {!this.state.loggedIn &&
-          <button onClick={() => {this.handleNew()}}>SIGN UP</button>
+          <Button.Group size='large'>
+            <Button onClick={() => {this.handleNew()}}>SIGN UP</Button>
+            <Button.Or/>
+            <Button onClick={() => {this.handleOld()}}>LOGIN</Button>
+          </Button.Group>
         }
-        {!this.state.loggedIn &&
-          <button onClick={() => {this.handleOld()}}>LOGIN</button>
-        }
+
       {this.state.new &&
         <div>
           <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
