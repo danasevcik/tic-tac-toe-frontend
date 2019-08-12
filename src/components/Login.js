@@ -109,7 +109,7 @@ class Login extends React.Component {
         }
 
       {this.state.new &&
-        <Form class="login-signup-form">
+        <Form id="login-signup-form">
           <Form.Field>
             <label>Name</label>
             <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
@@ -135,7 +135,7 @@ class Login extends React.Component {
         </Form>
       }
       {this.state.old &&
-        <Form class="login-signup-form">
+        <Form id="login-signup-form">
           <Form.Field>
             <label>Username</label>
             <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>

@@ -192,3 +192,12 @@ html, body {
   width: 70%;
   justify-self: center;
 }
+
+#login-main-div {
+  display: grid;
+}
+
+#login-signup-form {
+  width: 70%;
+  justify-self: center;
+}
