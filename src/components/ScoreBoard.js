@@ -9,6 +9,7 @@ class ScoreBoard extends React.Component {
 
   getHighScores = () => {
     let token = localStorage.getItem("token");
+    console.log('here');
     if (!!token) {
       fetch("http://localhost:3000/users")
       .then(res => res.json())
@@ -20,11 +21,9 @@ class ScoreBoard extends React.Component {
         this.setState({users: highScoreUsers})
       })
     }
-
   }
 
   renderUsers = (users) => {
-    this.setState({ users: null })
     return users.map((user, i) => {
       return <HighScore user={user} key={user.id} number={i}/>
     })

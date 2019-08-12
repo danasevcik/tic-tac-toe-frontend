@@ -334,7 +334,7 @@ class App extends React.Component {
         }
 
         {(!this.state.user) &&
-            <Login setUser={(user) => this.setUser(user)} user={this.state.user}/>
+          <Login setUser={(user) => this.setUser(user)} user={this.state.user}/>
         }
         {(this.state.startEasy && !this.state.winner[0]) &&
           <GameContainer user={this.state.user} announceWinner={(letter) => this.announceWinnerEasy(letter)} announceStaleMate={this.announceStaleMate}/>
