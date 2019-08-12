@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 class Login extends React.Component {
 
@@ -109,23 +109,44 @@ class Login extends React.Component {
         }
 
       {this.state.new &&
-        <div>
-          <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
-          <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="hometown" placeholder="HOMETOWN"></input>
-          <input onChange={(e) => {this.handleChange(e)}} name="funFact" placeholder="FUN FACT"></input>
-          <button onClick={() => {this.handleCreate(this.state)}}>SUBMIT</button>
-          <button onClick={() => {this.goBack()}}>BACK</button>
-        </div>
+        <Form>
+          <Form.Field>
+            <label>Name</label>
+            <input onChange={(e) => {this.handleChange(e)}} name="name" placeholder="NAME"></input>
+          </Form.Field>
+          <Form.Field>
+            <label>Username</label>
+            <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
+          </Form.Field>
+          <Form.Field>
+            <label>Hometown</label>
+            <input onChange={(e) => {this.handleChange(e)}} name="hometown" placeholder="HOMETOWN"></input>
+          </Form.Field>
+          <Form.Field>
+            <label>Fun Fact</label>
+            <input onChange={(e) => {this.handleChange(e)}} name="funFact" placeholder="FUN FACT"></input>
+          </Form.Field>
+          <Button type="submit" onClick={() => {this.handleCreate(this.state)}}>SIGN UP</Button>
+          <Button type="submit" onClick={() => {this.goBack()}}>BACK</Button>
+        </Form>
       }
       {this.state.old &&
-        <div>
-          <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
-          <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
-          <button onClick={() => {this.handleLogin(this.state)}}>SUBMIT</button>
-          <button onClick={() => {this.goBack()}}>BACK</button>
-        </div>
+        <Form>
+          <Form.Field>
+            <label>Username</label>
+            <input onChange={(e) => {this.handleChange(e)}} name="username" placeholder="USERNAME"></input>
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input onChange={(e) => {this.handleChange(e)}} type="password" name="password" placeholder="PASSWORD"></input>
+          </Form.Field>
+          <Button type="submit" onClick={() => {this.handleLogin(this.state)}}> SIGN IN</Button>
+          <Button type="submit" onClick={() => {this.goBack()}}>BACK</Button>
+        </Form>
       }
     </div>
     )
