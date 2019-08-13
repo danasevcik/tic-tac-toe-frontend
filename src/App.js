@@ -22,7 +22,8 @@ class App extends React.Component {
     startEasyCompGame: false,
     winner: [null, null],
     stalemate: false,
-    changeColor: true
+    changeColor: true,
+    users: ""
   }
 
   componentDidMount() {
@@ -305,6 +306,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('am i rendered again');
     let token = localStorage.getItem("token");
     return (
       <div className="App">
@@ -326,7 +328,7 @@ class App extends React.Component {
 
 
         {this.state.user &&
-          <ScoreBoard winner={this.state.winner} user={this.state.user}/>
+          <ScoreBoard winner={this.state.winner} user={this.state.user} users={this.state.users}/>
         }
 
         {(this.state.changeColor && this.state.user) &&
