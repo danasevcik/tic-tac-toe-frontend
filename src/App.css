@@ -2,6 +2,8 @@
   text-align: center;
   height: 100%;
   width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1488831861984-179da3647265?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80");
+  background-size: 100% 100%;
 }
 
 .App-logo {
@@ -51,7 +53,7 @@ html, body {
 }
 
 #board {
-  border: 5px black solid;
+  border: 2px black solid;
   padding: 10px;
   display: grid;
   margin-left: 10%;
@@ -63,7 +65,7 @@ html, body {
 }
 
 #hard-board {
-  border: 5px black solid;
+  border: 2px black solid;
   padding: 10px;
   display: grid;
   margin-left: 10%;
@@ -75,19 +77,19 @@ html, body {
 }
 
 .spot {
-  border: 2px black solid;
+  border: 1px black solid;
 }
 
 #empty-space {
   height: 100%;
   width: 100%;
-  background-color: lightgrey;
+  background-color: rgb(239, 237, 237);
 }
 
 #hard-empty-space {
   height: 100%;
   width: 100%;
-  background-color: lightgrey;
+  background-color: rgb(239, 237, 237);
 }
 
 #x {
@@ -115,14 +117,16 @@ html, body {
 }
 
 #winner-x {
-  border: 5px black solid;
+  border: 2px black solid;
+  border-radius: 1em;
   padding: 10px;
   margin: 2% 5%;
   background-color: magenta;
 }
 
 #winner-o {
-  border: 5px black solid;
+  border: 2px black solid;
+  border-radius: 1em;
   padding: 10px;
   margin: 2% 5%;
   background-color: gold;
@@ -142,7 +146,8 @@ html, body {
 }
 
 #game-over {
-  border: 5px black solid;
+  border: 2px black solid;
+  border-radius: 1em;
   padding: 10px;
   margin: 2% 5%;
   background-color: lightgrey;
