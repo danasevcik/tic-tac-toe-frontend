@@ -8,12 +8,10 @@ class ScoreBoard extends React.Component {
   }
 
   componentDidMount()  {
-    console.log('here');
   }
 
   getHighScores = () => {
     let token = localStorage.getItem("token");
-    console.log('here');
     if (!!token) {
       fetch("http://localhost:3000/users")
       .then(res => res.json())
@@ -35,8 +33,6 @@ class ScoreBoard extends React.Component {
   }
 
   render() {
-    console.log('am i rendered again also', !!this.props.users);
-    console.log(this.state.users);
     return (
       <div id="high-scores">
         <div id="high-scores-title">HIGH SCORES</div>

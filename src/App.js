@@ -306,7 +306,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('am i rendered again');
     let token = localStorage.getItem("token");
     return (
       <div className="App">
