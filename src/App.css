@@ -195,6 +195,8 @@ html, body {
 
 #login-main-div {
   display: grid;
+  background-image: url("https://images.unsplash.com/photo-1485134532658-d720895a3b5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80");
+  background-size: 100% 100%;
 }
 
 #login-signup-form {
