@@ -8,9 +8,8 @@ class ChangeColors extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.value);
     this.setState({value: e.target.value}, () => {
-      document.body.style.background = this.state.value
+      document.querySelector('#high-scores').style.background = this.state.value
       this.props.changeColor()
     })
   }
