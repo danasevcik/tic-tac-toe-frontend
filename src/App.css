@@ -204,7 +204,14 @@ html, body {
   background-size: 100% 100%;
 }
 
-#login-signup-form {
+#signup-form {
   width: 70%;
   justify-self: center;
+  padding-top: 25%;
+}
+
+#login-form {
+  width: 70%;
+  justify-self: center;
+  padding-top: 35%;
 }
