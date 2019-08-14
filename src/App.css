@@ -163,7 +163,7 @@ html, body {
 #high-scores {
   border: 2px black solid;
   border-radius: 1em;
-  margin: 10px 100px;
+  margin: 10px 15%;
 }
 
 #high-scores-title {
@@ -171,7 +171,7 @@ html, body {
 }
 
 #color-form {
-  margin: 5%;
+  margin: 5% 15%;
 }
 
 #login-main-div {
