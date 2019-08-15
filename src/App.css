@@ -85,25 +85,25 @@ html, body {
 #empty-space {
   height: 100%;
   width: 100%;
-  background-color: rgb(239, 237, 237);
+  background-color: rgba(14,22,31,0.2);
 }
 
 #hard-empty-space {
   height: 100%;
   width: 100%;
-  background-color: rgb(239, 237, 237);
+  background-color: rgba(14,22,31,0.2);
 }
 
 #x {
   height: 100%;
   width: 100%;
-  background-color: papayawhip;
+  background-color: floralwhite;
 }
 
 #hard-x {
   height: 100%;
   width: 100%;
-  background-color: papayawhip;
+  background-color: floralwhite;
 }
 
 #o {
@@ -123,7 +123,7 @@ html, body {
   border-radius: 1em;
   padding: 10px;
   margin: 2% 5%;
-  background-color: papayawhip;
+  background-color: floralwhite;
 }
 
 #winner-o {

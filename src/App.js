@@ -297,10 +297,12 @@ class App extends React.Component {
     document.getElementById("comp-game").className = "item"
 
     this.setState({
+      start: false,
       startEasy: false,
       startHard: false,
       startEasyCompGame: false,
-      start: false,
+      winner: [null, null],
+      stalemate: false,
       changeColor: !this.state.changeColor
     })
   }
