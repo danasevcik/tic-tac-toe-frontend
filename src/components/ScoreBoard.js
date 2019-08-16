@@ -7,9 +7,6 @@ class ScoreBoard extends React.Component {
     users: this.props.users
   }
 
-  componentDidMount()  {
-  }
-
   getHighScores = () => {
     let token = localStorage.getItem("token");
     if (!!token) {
@@ -38,7 +35,7 @@ class ScoreBoard extends React.Component {
         <div id="high-scores-title">HIGH SCORES</div>
         {!this.state.users &&
           <div>
-            <iframe title="loading-pizza" src="https://giphy.com/embed/3o7bu8sRnYpTOG1p8k" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pizza-loading-snacks-3o7bu8sRnYpTOG1p8k">via GIPHY</a></p>{this.getHighScores()}
+            <iframe title="loading-plant" src="https://giphy.com/embed/l3c61vAfyPVVt0i9q" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/samsungmobile-love-l3c61vAfyPVVt0i9q">via GIPHY</a></p>{this.getHighScores()}
           </div>
         }
         {!!this.state.users && this.renderUsers(this.state.users)}
