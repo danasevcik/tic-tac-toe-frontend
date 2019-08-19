@@ -124,7 +124,6 @@ class GameContainer extends React.Component {
       }
     }
     if (newArr.length === 0) {
-      console.log('here');
       this.props.announceStaleMate()
     }
   }
