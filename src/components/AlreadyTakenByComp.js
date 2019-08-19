@@ -3,7 +3,7 @@ import React from 'react';
 function AlreadyTakenByComp() {
     return (
       <h1 id='taken'>
-        I GOT HERE FIRST <span role="img" aria-label="devil emoji">😈</span>
+        TAKEN <span role="img" aria-label="plant emoji">🌱</span>
       </h1>
     )
 }
