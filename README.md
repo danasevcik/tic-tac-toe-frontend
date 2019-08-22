@@ -15,3 +15,5 @@ rails s
 ```
 npm start
 ```
+
+![enjoy](https://media.giphy.com/media/frS04FR3YHcqaHliEZ/giphy.gif)
