@@ -12,11 +12,13 @@ This application offers users:
 * JWT Authorization
 
 ## How to Use
-1. Run the rails server
+1. Clone this repository
+2. Clone the repository for the backend
+3. Run the rails server from the backend repo
 ```
 rails s
 ```
-2. Start React
+2. Start React from this repo
 ```
 npm start
 ```
