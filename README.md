@@ -13,7 +13,7 @@ This application offers users:
 
 ## How to Use
 1. Clone this repository
-2. Clone the repository for the backend
+2. Clone the repository for the backend [here](https://github.com/danasevcik/fifteen-backend)
 3. Run the rails server from the backend repo
 ```
 rails s
