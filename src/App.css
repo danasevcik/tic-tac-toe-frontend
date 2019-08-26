@@ -6,6 +6,13 @@
   background-size: 10000px 10000px cover;
   overflow-x: scroll;
   overflow-y: scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  position: relative;
 }
 
 .App-logo {
